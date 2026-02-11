@@ -1,0 +1,133 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+// Admin users for authentication
+model Admin {
+  id        Int      @id @default(autoincrement())
+  username  String   @unique @db.VarChar(50)
+  email     String   @unique @db.VarChar(100)
+  password  String   @db.VarChar(255) // bcrypt hashed
+  role      Role     @default(ADMIN)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  blogPosts BlogPost[]
+  media     Media[]
+
+  @@map("admins")
+}
+
+enum Role {
+  ADMIN
+  EDITOR
+}
+
+// Lead submissions from contact forms
+model Lead {
+  id        Int        @id @default(autoincrement())
+  name      String     @db.VarChar(100)
+  email     String     @db.VarChar(100)
+  phone     String?    @db.VarChar(20)
+  message   String     @db.Text
+  status    LeadStatus @default(PENDING)
+  source    String?    @db.VarChar(50) // which form submitted from
+  createdAt DateTime   @default(now())
+  updatedAt DateTime   @updatedAt
+
+  @@index([status])
+  @@index([createdAt])
+  @@map("leads")
+}
+
+enum LeadStatus {
+  PENDING
+  CONTACTED
+  CONVERTED
+  REJECTED
+}
+
+// Blog categories
+model Category {
+  id          Int      @id @default(autoincrement())
+  name        String   @unique @db.VarChar(100)
+  slug        String   @unique @db.VarChar(100)
+  description String?  @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  blogPosts BlogPost[]
+
+  @@map("categories")
+}
+
+// Blog posts
+model BlogPost {
+  id              Int         @id @default(autoincrement())
+  title           String      @db.VarChar(255)
+  slug            String      @unique @db.VarChar(255)
+  content         String      @db.LongText
+  excerpt         String?     @db.Text
+  featuredImage   String?     @db.VarChar(500)
+  metaTitle       String?     @db.VarChar(255)
+  metaDescription String?     @db.Text
+  keywords        String?     @db.Text
+  status          PostStatus  @default(DRAFT)
+  publishedAt     DateTime?
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+  deletedAt       DateTime? // Soft delete
+
+  // Foreign keys
+  authorId   Int
+  categoryId Int?
+
+  // Relations
+  author   Admin     @relation(fields: [authorId], references: [id])
+  category Category? @relation(fields: [categoryId], references: [id])
+
+  @@index([slug])
+  @@index([status])
+  @@index([publishedAt])
+  @@index([authorId])
+  @@index([categoryId])
+  @@map("blog_posts")
+}
+
+enum PostStatus {
+  DRAFT
+  PUBLISHED
+}
+
+// Media library for uploaded images
+model Media {
+  id           Int      @id @default(autoincrement())
+  filename     String   @db.VarChar(255)
+  originalName String   @db.VarChar(255)
+  filePath     String   @db.VarChar(500)
+  fileSize     Int // in bytes
+  mimeType     String   @db.VarChar(100)
+  width        Int?
+  height       Int?
+  createdAt    DateTime @default(now())
+
+  // Foreign keys
+  uploadedBy Int
+
+  // Relations
+  uploader Admin @relation(fields: [uploadedBy], references: [id])
+
+  @@index([uploadedBy])
+  @@index([createdAt])
+  @@map("media")
+}
