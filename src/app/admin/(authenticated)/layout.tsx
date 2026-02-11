@@ -3,7 +3,7 @@ import { redirect } from 'next/navigation'
 import { authOptions } from '@/lib/auth'
 import AdminSidebar from '@/components/admin/Sidebar'
 import AdminHeader from '@/components/admin/Header'
-import { SessionProvider } from 'next-auth/react'
+import NextAuthProvider from '@/components/admin/NextAuthProvider'
 
 export default async function AdminLayout({
     children,
@@ -17,7 +17,7 @@ export default async function AdminLayout({
     }
 
     return (
-        <SessionProvider session={session}>
+        <NextAuthProvider session={session}>
             <div className="flex h-screen bg-gray-50 overflow-hidden">
                 <AdminSidebar />
                 <div className="flex-1 flex flex-col overflow-hidden">
@@ -27,6 +27,6 @@ export default async function AdminLayout({
                     </main>
                 </div>
             </div>
-        </SessionProvider>
+        </NextAuthProvider>
     )
 }

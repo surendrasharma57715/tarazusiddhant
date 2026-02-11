@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -30,6 +30,17 @@ export default function AdminSidebar() {
     const pathname = usePathname()
     const [isCollapsed, setIsCollapsed] = useState(false)
     const [isMobileOpen, setIsMobileOpen] = useState(false)
+    const [isLg, setIsLg] = useState(true)
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsLg(window.innerWidth >= 1024)
+        }
+
+        handleResize()
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
 
     return (
         <>
@@ -59,7 +70,7 @@ export default function AdminSidebar() {
                 initial={false}
                 animate={{
                     width: isCollapsed ? '80px' : '280px',
-                    x: isMobileOpen ? 0 : '-100%',
+                    x: isLg ? 0 : (isMobileOpen ? 0 : '-100%'),
                 }}
                 className={cn(
                     'fixed lg:sticky top-0 left-0 h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 border-r border-gray-700 z-40 transition-all duration-300',

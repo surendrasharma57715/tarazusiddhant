@@ -1,18 +1,47 @@
 'use client'
 
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { useParams } from 'next/navigation'
 import { motion } from 'framer-motion'
-import { Calendar, User, ArrowLeft, Tag, Share2, Clock } from 'lucide-react'
+import { Calendar, User, ArrowLeft, Tag, Share2, Clock, Loader2 } from 'lucide-react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { blogPosts } from '@/data/blogData'
 
 export default function BlogPostPage() {
     const params = useParams()
     const slug = params?.slug as string
+    const [post, setPost] = useState<any>(null)
+    const [isLoading, setIsLoading] = useState(true)
 
-    const post = blogPosts.find(p => p.slug === slug)
+    useEffect(() => {
+        if (slug) {
+            fetchPost()
+        }
+    }, [slug])
+
+    const fetchPost = async () => {
+        setIsLoading(true)
+        try {
+            const res = await fetch(`/api/blog/${slug}`)
+            if (res.ok) {
+                const data = await res.json()
+                setPost(data)
+            }
+        } catch (error) {
+            console.error('Error fetching blog post:', error)
+        } finally {
+            setIsLoading(false)
+        }
+    }
+
+    if (isLoading) {
+        return (
+            <div className="min-h-screen pt-32 pb-16 flex flex-col items-center justify-center text-center px-4">
+                <Loader2 className="w-12 h-12 text-primary animate-spin mb-4" />
+                <p className="text-gray-500 font-bold uppercase tracking-widest text-sm">Loading Article...</p>
+            </div>
+        )
+    }
 
     if (!post) {
         return (
@@ -35,7 +64,7 @@ export default function BlogPostPage() {
             {/* Post Header / Hero */}
             <div className="relative h-[50vh] min-h-[400px] w-full mb-12 overflow-hidden shadow-2xl">
                 <img
-                    src={post.image}
+                    src={post.featuredImage || '/blog_placeholder.png'}
                     alt={post.title}
                     className="w-full h-full object-cover"
                 />
@@ -50,7 +79,7 @@ export default function BlogPostPage() {
                             className="max-w-4xl"
                         >
                             <span className="inline-block px-4 py-1.5 bg-primary text-white text-[10px] font-black uppercase tracking-wider rounded-lg mb-6 shadow-lg">
-                                {post.category}
+                                {post.category?.name || 'News'}
                             </span>
                             <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight uppercase tracking-tight">
                                 {post.title}
@@ -59,11 +88,15 @@ export default function BlogPostPage() {
                             <div className="flex flex-wrap items-center gap-6 text-white/80 text-sm font-bold uppercase tracking-widest">
                                 <span className="flex items-center gap-2">
                                     <Calendar className="w-4 h-4 text-primary" />
-                                    {post.date}
+                                    {new Date(post.publishedAt || post.createdAt).toLocaleDateString('en-US', {
+                                        month: 'short',
+                                        day: 'numeric',
+                                        year: 'numeric'
+                                    })}
                                 </span>
                                 <span className="flex items-center gap-2">
                                     <User className="w-4 h-4 text-primary" />
-                                    {post.author}
+                                    {post.author?.username}
                                 </span>
                                 <span className="flex items-center gap-2">
                                     <Clock className="w-4 h-4 text-primary" />
@@ -98,7 +131,7 @@ export default function BlogPostPage() {
                         </div>
                         <div className="flex items-center gap-2">
                             <Tag className="w-4 h-4 text-primary" />
-                            <span className="text-xs font-bold text-gray-900 border-b-2 border-primary/20">{post.category}</span>
+                            <span className="text-xs font-bold text-gray-900 border-b-2 border-primary/20">{post.category?.name || 'News'}</span>
                         </div>
                     </div>
 
@@ -116,11 +149,11 @@ export default function BlogPostPage() {
                     <div className="bg-gray-50 rounded-[2rem] p-10 md:p-16 flex flex-col md:flex-row items-center gap-10 border border-gray-100 mb-20">
                         <div className="w-24 h-24 md:w-32 md:h-32 bg-gray-200 rounded-full overflow-hidden flex-shrink-0 shadow-xl border-4 border-white">
                             <div className="w-full h-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center text-white text-4xl font-black">
-                                {post.author.charAt(0)}
+                                {post.author?.username.charAt(0)}
                             </div>
                         </div>
                         <div className="text-center md:text-left">
-                            <h3 className="text-2xl font-black text-gray-900 mb-3 uppercase tracking-tight">About {post.author}</h3>
+                            <h3 className="text-2xl font-black text-gray-900 mb-3 uppercase tracking-tight">About {post.author?.username}</h3>
                             <p className="text-gray-600 mb-6 leading-relaxed">
                                 Founder of Tarazu Siddhant Academy and a veteran trader with over a decade of experience in Indian equity and derivatives markets. Passionate about teaching balanced trading principles.
                             </p>

@@ -1,10 +1,9 @@
 import type { Metadata } from 'next'
 import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import WhatsAppButton from '@/components/WhatsAppButton'
+import ClientLayout from '@/components/ClientLayout'
 
+/*
 const inter = Inter({
     subsets: ['latin'],
     variable: '--font-inter',
@@ -17,6 +16,10 @@ const poppins = Poppins({
     variable: '--font-poppins',
     display: 'swap',
 })
+*/
+
+const inter = { variable: 'font-sans' };
+const poppins = { variable: 'font-sans' };
 
 export const metadata: Metadata = {
     title: 'Tarazu Siddhant - Trading Education Mentor | Option Chain Tarazu Principle',
@@ -50,12 +53,7 @@ export default function RootLayout({
     return (
         <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
             <body>
-                <Header />
-                <main className="min-h-screen">
-                    {children}
-                </main>
-                <Footer />
-                <WhatsAppButton />
+                <ClientLayout>{children}</ClientLayout>
             </body>
         </html>
     )

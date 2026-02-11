@@ -12,35 +12,47 @@ export const authOptions: NextAuthOptions = {
                 password: { label: 'Password', type: 'password' },
             },
             async authorize(credentials) {
-                if (!credentials?.email || !credentials?.password) {
-                    throw new Error('Email and password are required')
-                }
+                try {
+                    console.log('🔐 Auth attempt for:', credentials?.email)
 
-                // Find admin user
-                const admin = await prisma.admin.findUnique({
-                    where: { email: credentials.email },
-                })
+                    if (!credentials?.email || !credentials?.password) {
+                        console.log('❌ Missing credentials')
+                        throw new Error('Email and password are required')
+                    }
 
-                if (!admin) {
-                    throw new Error('Invalid email or password')
-                }
+                    // Find admin user
+                    const admin = await prisma.admin.findUnique({
+                        where: { email: credentials.email },
+                    })
 
-                // Verify password
-                const isValidPassword = await bcrypt.compare(
-                    credentials.password,
-                    admin.password
-                )
+                    if (!admin) {
+                        console.log('❌ Admin not found:', credentials.email)
+                        throw new Error('Invalid email or password')
+                    }
 
-                if (!isValidPassword) {
-                    throw new Error('Invalid email or password')
-                }
+                    // Verify password
+                    const isValidPassword = await bcrypt.compare(
+                        credentials.password,
+                        admin.password
+                    )
 
-                // Return user object
-                return {
-                    id: admin.id.toString(),
-                    email: admin.email,
-                    name: admin.username,
-                    role: admin.role,
+                    if (!isValidPassword) {
+                        console.log('❌ Invalid password for:', credentials.email)
+                        throw new Error('Invalid email or password')
+                    }
+
+                    console.log('✅ Auth successful for:', admin.email)
+
+                    // Return user object
+                    return {
+                        id: admin.id.toString(),
+                        email: admin.email,
+                        name: admin.username,
+                        role: admin.role,
+                    }
+                } catch (error) {
+                    console.error('🔥 Auth Error:', error)
+                    throw error
                 }
             },
         }),
