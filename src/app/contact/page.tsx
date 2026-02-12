@@ -3,7 +3,8 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useForm } from 'react-hook-form'
-import { MapPin, Phone, Mail, Clock, Send, Facebook, Twitter, Instagram, Linkedin, MessageSquare } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock, Send, Facebook, Instagram, Youtube } from 'lucide-react'
+import { FaWhatsapp } from 'react-icons/fa'
 
 // Contact Information Data
 const contactInfo = [
@@ -35,10 +36,10 @@ const contactInfo = [
 
 // Social Links
 const socialLinks = [
-    { icon: Facebook, href: '#', color: 'hover:text-blue-600' },
-    { icon: Twitter, href: '#', color: 'hover:text-sky-500' },
-    { icon: Instagram, href: '#', color: 'hover:text-pink-600' },
-    { icon: Linkedin, href: '#', color: 'hover:text-blue-700' }
+    { icon: Youtube, href: 'https://youtube.com/@ltp1977?si=93R12yP1b4B1Q0Yy', color: 'hover:text-red-600' },
+    { icon: Instagram, href: 'https://www.instagram.com/tarajusiddhant.com_?igsh=cTAxNTk0N29pNjJz', color: 'hover:text-pink-600' },
+    { icon: FaWhatsapp, href: 'https://whatsapp.com/channel/0029VbBWHrYF6smyfv2IAh2L', color: 'hover:text-green-600' },
+    { icon: Facebook, href: 'https://www.facebook.com/share/1TSoyHDGyJ/', color: 'hover:text-blue-600' }
 ]
 
 export default function ContactPage() {
@@ -228,6 +229,31 @@ export default function ContactPage() {
                                     </>
                                 )}
                             </button>
+
+                            {/* Trust Badges */}
+                            <div className="mt-6 pt-6 border-t border-gray-100">
+                                <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-xs text-gray-500">
+                                    <div className="flex items-center gap-2">
+                                        <svg className="w-4 h-4 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                                        </svg>
+                                        <span className="font-medium">100% Secure & Encrypted</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <svg className="w-4 h-4 text-blue-600" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clipRule="evenodd" />
+                                        </svg>
+                                        <span className="font-medium">Your Privacy Protected</span>
+                                    </div>
+                                    <div className="flex items-center gap-2">
+                                        <svg className="w-4 h-4 text-purple-600" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                                            <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                                        </svg>
+                                        <span className="font-medium">24-Hour Response Time</span>
+                                    </div>
+                                </div>
+                            </div>
                         </form>
                     </motion.div>
                 </div>

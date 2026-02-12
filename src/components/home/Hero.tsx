@@ -40,7 +40,8 @@ const Hero = () => {
                                     Start Your Journey <TrendingUp className="w-5 h-5" />
                                 </Link>
                                 <Link
-                                    href="/courses"
+                                    href="https://academy.tarajusiddhant.com/courses"
+                                    target="_blank"
                                     className="px-8 py-4 bg-white text-primary border-2 border-primary font-bold rounded-full hover:bg-primary/5 transition-all duration-300 flex items-center justify-center gap-2"
                                 >
                                     View Our Courses

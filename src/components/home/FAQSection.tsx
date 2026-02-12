@@ -120,33 +120,6 @@ const FAQSection = () => {
                         ))}
                     </div>
 
-                    {/* Support CTA */}
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.5, delay: 0.6 }}
-                        className="mt-16 text-center bg-gray-50 border border-gray-100 rounded-[2.5rem] p-8 md:p-12 shadow-inner"
-                    >
-                        <h4 className="text-xl font-black text-gray-900 mb-2 uppercase tracking-tight">Still have questions?</h4>
-                        <p className="text-gray-500 mb-8 font-medium">We&apos;re here to help you start your trading journey with confidence.</p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a
-                                href="https://wa.me/918209203234"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="px-8 py-4 bg-[#25D366] text-white font-black rounded-2xl hover:bg-[#128C7E] transition-all shadow-lg shadow-green-200 flex items-center justify-center gap-2 uppercase text-xs tracking-widest"
-                            >
-                                WhatsApp Us
-                            </a>
-                            <a
-                                href="/contact"
-                                className="px-8 py-4 bg-white border-2 border-primary/20 text-primary font-black rounded-2xl hover:border-primary transition-all flex items-center justify-center gap-2 uppercase text-xs tracking-widest"
-                            >
-                                Contact Support
-                            </a>
-                        </div>
-                    </motion.div>
                 </div>
             </div>
         </section>

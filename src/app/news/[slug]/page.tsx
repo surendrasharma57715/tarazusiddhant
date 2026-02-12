@@ -59,10 +59,28 @@ export default function BlogPostPage() {
         )
     }
 
+    const handleShare = async () => {
+        if (navigator.share) {
+            try {
+                await navigator.share({
+                    title: post.title,
+                    text: post.excerpt || post.title,
+                    url: window.location.href,
+                })
+            } catch (error) {
+                console.log('Error sharing:', error)
+            }
+        } else {
+            // Fallback: Copy to clipboard
+            navigator.clipboard.writeText(window.location.href)
+            alert('Link copied to clipboard!')
+        }
+    }
+
     return (
-        <div className="min-h-screen bg-white pt-24 pb-16">
+        <div className="min-h-screen bg-white pb-16">
             {/* Post Header / Hero */}
-            <div className="relative h-[50vh] min-h-[400px] w-full mb-12 overflow-hidden shadow-2xl">
+            <div className="relative h-[60vh] min-h-[500px] w-full mb-12 overflow-hidden shadow-2xl mt-20">
                 <img
                     src={post.featuredImage || '/blog_placeholder.png'}
                     alt={post.title}
@@ -111,10 +129,10 @@ export default function BlogPostPage() {
                 <div className="absolute top-8 left-8 z-20">
                     <Link
                         href="/news"
-                        className="flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white px-6 py-3 rounded-2xl hover:bg-white hover:text-black transition-all duration-300 font-bold uppercase text-xs tracking-widest group"
+                        className="flex items-center gap-2 bg-white text-gray-900 shadow-lg px-6 py-3 rounded-2xl hover:bg-primary hover:text-white transition-all duration-300 font-bold uppercase text-xs tracking-widest group"
                     >
                         <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                        Back
+                        Back to News
                     </Link>
                 </div>
             </div>
@@ -125,7 +143,11 @@ export default function BlogPostPage() {
                     <div className="flex justify-between items-center py-6 border-b border-gray-100 mb-12">
                         <div className="flex items-center gap-4">
                             <span className="text-xs font-black uppercase tracking-widest text-gray-400">Share This:</span>
-                            <button className="p-2.5 rounded-xl bg-gray-50 text-gray-600 hover:bg-primary hover:text-white transition-all">
+                            <button
+                                onClick={handleShare}
+                                className="p-2.5 rounded-xl bg-gray-50 text-gray-600 hover:bg-primary hover:text-white transition-all"
+                                title="Share this article"
+                            >
                                 <Share2 className="w-5 h-5" />
                             </button>
                         </div>
@@ -153,17 +175,26 @@ export default function BlogPostPage() {
                             </div>
                         </div>
                         <div className="text-center md:text-left">
-                            <h3 className="text-2xl font-black text-gray-900 mb-3 uppercase tracking-tight">About {post.author?.username}</h3>
+                            <h3 className="text-2xl font-black text-gray-900 mb-3 uppercase tracking-tight">About the Author</h3>
+                            <p className="text-xl font-bold text-primary mb-2">{post.author?.username || 'Tarazu Siddhant Team'}</p>
                             <p className="text-gray-600 mb-6 leading-relaxed">
-                                Founder of Tarazu Siddhant Academy and a veteran trader with over a decade of experience in Indian equity and derivatives markets. Passionate about teaching balanced trading principles.
+                                Expert trader and educator at Tarazu Siddhant Academy. Specializing in Option Chain analysis, market psychology, and helping traders achieve consistent profitability through data-driven strategies.
                             </p>
                             <div className="flex justify-center md:justify-start gap-4">
-                                <button className="text-primary font-black text-[10px] uppercase tracking-widest border-b-2 border-primary/20 hover:border-primary transition-all">
-                                    View Trainer Profile
-                                </button>
-                                <button className="text-primary font-black text-[10px] uppercase tracking-widest border-b-2 border-primary/20 hover:border-primary transition-all">
+                                <a
+                                    href="/about"
+                                    className="text-primary font-black text-[10px] uppercase tracking-widest border-b-2 border-primary/20 hover:border-primary transition-all"
+                                >
+                                    About Us
+                                </a>
+                                <a
+                                    href="https://youtube.com/@ltp1977?si=93R12yP1b4B1Q0Yy"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-primary font-black text-[10px] uppercase tracking-widest border-b-2 border-primary/20 hover:border-primary transition-all"
+                                >
                                     Follow On YouTube
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>

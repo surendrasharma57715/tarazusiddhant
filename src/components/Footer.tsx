@@ -2,7 +2,7 @@
 
 import React from 'react'
 import Link from 'next/link'
-import { FaChartLine, FaFacebook, FaInstagram, FaYoutube, FaTwitter, FaLinkedin } from 'react-icons/fa'
+import { FaChartLine, FaFacebook, FaInstagram, FaYoutube, FaWhatsapp } from 'react-icons/fa'
 import { MdEmail, MdPhone, MdLocationOn } from 'react-icons/md'
 
 const Footer = () => {
@@ -29,11 +29,10 @@ const Footer = () => {
     ]
 
     const socialLinks = [
-        { icon: FaFacebook, href: '#', label: 'Facebook' },
-        { icon: FaInstagram, href: '#', label: 'Instagram' },
-        { icon: FaYoutube, href: '#', label: 'YouTube' },
-        { icon: FaTwitter, href: '#', label: 'Twitter' },
-        { icon: FaLinkedin, href: '#', label: 'LinkedIn' },
+        { icon: FaYoutube, href: 'https://youtube.com/@ltp1977?si=93R12yP1b4B1Q0Yy', label: 'YouTube' },
+        { icon: FaInstagram, href: 'https://www.instagram.com/tarajusiddhant.com_?igsh=cTAxNTk0N29pNjJz', label: 'Instagram' },
+        { icon: FaWhatsapp, href: 'https://whatsapp.com/channel/0029VbBWHrYF6smyfv2IAh2L', label: 'WhatsApp Channel' },
+        { icon: FaFacebook, href: 'https://www.facebook.com/share/1TSoyHDGyJ/', label: 'Facebook' },
     ]
 
     return (
@@ -95,14 +94,9 @@ const Footer = () => {
                         <ul className="space-y-2">
                             {courses.map((course) => (
                                 <li key={course.name}>
-                                    <a
-                                        href={course.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="text-gray-400 hover:text-primary transition-colors duration-200 text-sm"
-                                    >
+                                    <span className="text-gray-400 text-sm">
                                         {course.name}
-                                    </a>
+                                    </span>
                                 </li>
                             ))}
                         </ul>
