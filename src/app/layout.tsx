@@ -3,7 +3,6 @@ import { Inter, Poppins } from 'next/font/google'
 import './globals.css'
 import ClientLayout from '@/components/ClientLayout'
 
-/*
 const inter = Inter({
     subsets: ['latin'],
     variable: '--font-inter',
@@ -16,10 +15,6 @@ const poppins = Poppins({
     variable: '--font-poppins',
     display: 'swap',
 })
-*/
-
-const inter = { variable: 'font-sans' };
-const poppins = { variable: 'font-sans' };
 
 export const metadata: Metadata = {
     title: 'Tarazu Siddhant - Trading Education Mentor | Option Chain Tarazu Principle',
