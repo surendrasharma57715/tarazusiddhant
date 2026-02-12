@@ -9,7 +9,9 @@ import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { loginSchema, type LoginInput } from '@/lib/validation'
 
-export default function AdminLoginPage() {
+import { Suspense } from 'react'
+
+function LoginForm() {
     const router = useRouter()
     const searchParams = useSearchParams()
     const callbackUrl = searchParams.get('callbackUrl') || '/admin/dashboard'
@@ -209,5 +211,13 @@ export default function AdminLoginPage() {
         }
       `}</style>
         </div>
+    )
+}
+
+export default function AdminLoginPage() {
+    return (
+        <Suspense fallback={<div className="min-h-screen bg-gray-900 flex items-center justify-center text-white">Loading...</div>}>
+            <LoginForm />
+        </Suspense>
     )
 }
