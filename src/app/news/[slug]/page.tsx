@@ -71,163 +71,149 @@ export default function BlogPostPage() {
                 console.log('Error sharing:', error)
             }
         } else {
-            // Fallback: Copy to clipboard
             navigator.clipboard.writeText(window.location.href)
             alert('Link copied to clipboard!')
         }
     }
 
     return (
-        <div className="min-h-screen bg-white pb-16">
-            {/* Back Button - Fixed at top */}
-            <div className="sticky top-20 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-100 py-4">
-                <div className="container mx-auto px-4">
+        <div className="min-h-screen bg-gray-50 pt-20">
+            {/* Clean Navigation Bar */}
+            <div className="bg-white border-b border-gray-200 sticky top-20 z-40">
+                <div className="container mx-auto px-4 py-4">
                     <Link
                         href="/news"
-                        className="inline-flex items-center gap-2 text-gray-700 hover:text-primary font-bold text-sm transition-colors group"
+                        className="inline-flex items-center gap-2 text-gray-600 hover:text-primary font-semibold transition-colors group"
                     >
                         <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-                        Back to News
+                        <span>Back to All News</span>
                     </Link>
                 </div>
             </div>
 
-            {/* Post Header / Hero - Responsive */}
-            <div className="relative w-full mb-8 md:mb-12 overflow-hidden">
-                {/* Featured Image */}
-                <div className="relative h-[40vh] md:h-[50vh] max-h-[400px] md:max-h-[500px] w-full">
-                    <img
-                        src={post.featuredImage || '/blog_placeholder.png'}
-                        alt={post.title}
-                        className="w-full h-full object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
-                </div>
-
-                {/* Title and Meta - Overlapping bottom of image */}
-                <div className="relative -mt-20 md:-mt-32">
-                    <div className="container mx-auto px-4">
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            className="max-w-4xl mx-auto"
-                        >
-                            {/* Category Badge */}
-                            <span className="inline-block px-3 py-1 md:px-4 md:py-1.5 bg-primary text-white text-[9px] md:text-[10px] font-black uppercase tracking-wider rounded-lg mb-3 md:mb-4 shadow-lg">
-                                {post.category?.name || 'News'}
-                            </span>
-
-                            {/* Title */}
-                            <h1 className="text-2xl md:text-4xl lg:text-5xl font-black text-white mb-4 md:mb-6 leading-tight uppercase tracking-tight drop-shadow-lg">
-                                {post.title}
-                            </h1>
-
-                            {/* Meta Information */}
-                            <div className="flex flex-wrap items-center gap-3 md:gap-6 text-white/90 text-xs md:text-sm font-bold uppercase tracking-wide mb-6 md:mb-8">
-                                <span className="flex items-center gap-1.5 md:gap-2">
-                                    <Calendar className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary" />
-                                    <span className="text-[10px] md:text-xs">
-                                        {new Date(post.publishedAt || post.createdAt).toLocaleDateString('en-US', {
-                                            month: 'short',
-                                            day: 'numeric',
-                                            year: 'numeric'
-                                        })}
-                                    </span>
-                                </span>
-                                <span className="flex items-center gap-1.5 md:gap-2">
-                                    <User className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary" />
-                                    <span className="text-[10px] md:text-xs">{post.author?.username}</span>
-                                </span>
-                                <span className="flex items-center gap-1.5 md:gap-2">
-                                    <Clock className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary" />
-                                    <span className="text-[10px] md:text-xs">8 min read</span>
-                                </span>
-                            </div>
-                        </motion.div>
-                    </div>
-                </div>
-            </div>
-
-            <div className="container mx-auto px-4">
-                <div className="max-w-4xl mx-auto">
-                    {/* Share & Actions */}
-                    <div className="flex justify-between items-center py-6 border-b border-gray-100 mb-12">
-                        <div className="flex items-center gap-4">
-                            <span className="text-xs font-black uppercase tracking-widest text-gray-400">Share This:</span>
-                            <button
-                                onClick={handleShare}
-                                className="p-2.5 rounded-xl bg-gray-50 text-gray-600 hover:bg-primary hover:text-white transition-all"
-                                title="Share this article"
-                            >
-                                <Share2 className="w-5 h-5" />
-                            </button>
-                        </div>
-                        <div className="flex items-center gap-2">
-                            <Tag className="w-4 h-4 text-primary" />
-                            <span className="text-xs font-bold text-gray-900 border-b-2 border-primary/20">{post.category?.name || 'News'}</span>
-                        </div>
+            {/* Main Content Container */}
+            <div className="container mx-auto px-4 py-8 md:py-12 max-w-5xl">
+                {/* Article Header */}
+                <motion.article
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                    className="bg-white rounded-2xl shadow-sm overflow-hidden"
+                >
+                    {/* Featured Image */}
+                    <div className="relative w-full h-[250px] md:h-[400px] lg:h-[500px]">
+                        <img
+                            src={post.featuredImage || '/blog_placeholder.png'}
+                            alt={post.title}
+                            className="w-full h-full object-cover"
+                        />
                     </div>
 
                     {/* Content Section */}
-                    <motion.article
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        transition={{ duration: 0.8, delay: 0.2 }}
-                        className="prose prose-xl prose-primary max-w-none text-gray-800 leading-relaxed font-light mb-20"
-                    >
-                        <div dangerouslySetInnerHTML={{ __html: post.content }} />
-                    </motion.article>
+                    <div className="p-6 md:p-10 lg:p-12">
+                        {/* Category Badge */}
+                        <span className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs font-bold uppercase tracking-wider rounded-lg mb-4">
+                            {post.category?.name || 'News'}
+                        </span>
 
-                    {/* Author Bio (Placeholder) */}
-                    <div className="bg-gray-50 rounded-[2rem] p-10 md:p-16 flex flex-col md:flex-row items-center gap-10 border border-gray-100 mb-20">
-                        <div className="w-24 h-24 md:w-32 md:h-32 bg-gray-200 rounded-full overflow-hidden flex-shrink-0 shadow-xl border-4 border-white">
-                            <div className="w-full h-full bg-gradient-to-br from-primary to-purple-600 flex items-center justify-center text-white text-4xl font-black">
+                        {/* Title */}
+                        <h1 className="text-2xl md:text-3xl lg:text-4xl font-black text-gray-900 mb-4 leading-tight">
+                            {post.title}
+                        </h1>
+
+                        {/* Meta Information */}
+                        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-600 pb-6 mb-6 border-b border-gray-200">
+                            <div className="flex items-center gap-2">
+                                <Calendar className="w-4 h-4 text-primary" />
+                                <span>
+                                    {new Date(post.publishedAt || post.createdAt).toLocaleDateString('en-US', {
+                                        month: 'long',
+                                        day: 'numeric',
+                                        year: 'numeric'
+                                    })}
+                                </span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <User className="w-4 h-4 text-primary" />
+                                <span>{post.author?.username}</span>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Clock className="w-4 h-4 text-primary" />
+                                <span>8 min read</span>
+                            </div>
+                        </div>
+
+                        {/* Share Section */}
+                        <div className="flex items-center justify-between mb-8 pb-6 border-b border-gray-200">
+                            <div className="flex items-center gap-3">
+                                <span className="text-sm font-semibold text-gray-700">Share this article:</span>
+                                <button
+                                    onClick={handleShare}
+                                    className="p-2 rounded-lg bg-gray-100 text-gray-600 hover:bg-primary hover:text-white transition-all"
+                                    title="Share this article"
+                                >
+                                    <Share2 className="w-4 h-4" />
+                                </button>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Tag className="w-4 h-4 text-primary" />
+                                <span className="text-sm font-semibold text-gray-900">{post.category?.name || 'News'}</span>
+                            </div>
+                        </div>
+
+                        {/* Article Content */}
+                        <div className="prose prose-lg max-w-none mb-12">
+                            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+                        </div>
+
+                        {/* Author Bio */}
+                        <div className="bg-gray-50 rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center md:items-start gap-6 border border-gray-100">
+                            <div className="w-20 h-20 md:w-24 md:h-24 bg-gradient-to-br from-primary to-purple-600 rounded-full flex items-center justify-center text-white text-3xl font-black flex-shrink-0 shadow-lg">
                                 {post.author?.username.charAt(0)}
                             </div>
-                        </div>
-                        <div className="text-center md:text-left">
-                            <h3 className="text-2xl font-black text-gray-900 mb-3 uppercase tracking-tight">About the Author</h3>
-                            <p className="text-xl font-bold text-primary mb-2">{post.author?.username || 'Tarazu Siddhant Team'}</p>
-                            <p className="text-gray-600 mb-6 leading-relaxed">
-                                Expert trader and educator at Tarazu Siddhant Academy. Specializing in Option Chain analysis, market psychology, and helping traders achieve consistent profitability through data-driven strategies.
-                            </p>
-                            <div className="flex justify-center md:justify-start gap-4">
-                                <a
-                                    href="/about"
-                                    className="text-primary font-black text-[10px] uppercase tracking-widest border-b-2 border-primary/20 hover:border-primary transition-all"
-                                >
-                                    About Us
-                                </a>
-                                <a
-                                    href="https://youtube.com/@ltp1977?si=93R12yP1b4B1Q0Yy"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="text-primary font-black text-[10px] uppercase tracking-widest border-b-2 border-primary/20 hover:border-primary transition-all"
-                                >
-                                    Follow On YouTube
-                                </a>
+                            <div className="text-center md:text-left flex-1">
+                                <h3 className="text-xl font-black text-gray-900 mb-2">About the Author</h3>
+                                <p className="text-lg font-bold text-primary mb-2">{post.author?.username || 'Tarazu Siddhant Team'}</p>
+                                <p className="text-gray-600 mb-4 leading-relaxed">
+                                    Expert trader and educator at Tarazu Siddhant Academy. Specializing in Option Chain analysis, market psychology, and helping traders achieve consistent profitability through data-driven strategies.
+                                </p>
+                                <div className="flex flex-wrap justify-center md:justify-start gap-4">
+                                    <a
+                                        href="/about"
+                                        className="text-primary font-bold text-sm hover:underline"
+                                    >
+                                        About Us
+                                    </a>
+                                    <a
+                                        href="https://youtube.com/@ltp1977?si=93R12yP1b4B1Q0Yy"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="text-primary font-bold text-sm hover:underline"
+                                    >
+                                        Follow On YouTube
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
+                </motion.article>
 
-                    {/* Post Navigation */}
-                    <div className="flex flex-col sm:flex-row justify-between gap-6 pt-12 border-t border-gray-100">
-                        <Link
-                            href="/news"
-                            className="bg-white border border-gray-100 p-8 rounded-3xl hover:border-primary hover:shadow-xl transition-all group flex-1"
-                        >
-                            <span className="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-2">Previous Article</span>
-                            <span className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors">How to Read Market Breadth</span>
-                        </Link>
-                        <Link
-                            href="/news"
-                            className="bg-white border border-gray-100 p-8 rounded-3xl hover:border-primary hover:shadow-xl transition-all group flex-1 text-right"
-                        >
-                            <span className="text-[10px] font-black uppercase tracking-widest text-gray-400 block mb-2">Next Article</span>
-                            <span className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors">Swing Trading Mastery Guide</span>
-                        </Link>
-                    </div>
+                {/* Navigation to Other Posts */}
+                <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <Link
+                        href="/news"
+                        className="bg-white border border-gray-200 p-6 rounded-2xl hover:border-primary hover:shadow-lg transition-all group"
+                    >
+                        <span className="text-xs font-bold uppercase tracking-wider text-gray-400 block mb-2">Previous Article</span>
+                        <span className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors">How to Read Market Breadth</span>
+                    </Link>
+                    <Link
+                        href="/news"
+                        className="bg-white border border-gray-200 p-6 rounded-2xl hover:border-primary hover:shadow-lg transition-all group text-right"
+                    >
+                        <span className="text-xs font-bold uppercase tracking-wider text-gray-400 block mb-2">Next Article</span>
+                        <span className="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors">Swing Trading Mastery Guide</span>
+                    </Link>
                 </div>
             </div>
         </div>
