@@ -79,61 +79,73 @@ export default function BlogPostPage() {
 
     return (
         <div className="min-h-screen bg-white pb-16">
-            {/* Post Header / Hero */}
-            <div className="relative h-[60vh] min-h-[500px] w-full mb-12 overflow-hidden shadow-2xl mt-20">
-                <img
-                    src={post.featuredImage || '/blog_placeholder.png'}
-                    alt={post.title}
-                    className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent"></div>
-
-                <div className="absolute bottom-0 left-0 w-full p-8 md:p-16">
-                    <div className="container mx-auto">
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.6 }}
-                            className="max-w-4xl"
-                        >
-                            <span className="inline-block px-4 py-1.5 bg-primary text-white text-[10px] font-black uppercase tracking-wider rounded-lg mb-6 shadow-lg">
-                                {post.category?.name || 'News'}
-                            </span>
-                            <h1 className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-6 leading-tight uppercase tracking-tight">
-                                {post.title}
-                            </h1>
-
-                            <div className="flex flex-wrap items-center gap-6 text-white/80 text-sm font-bold uppercase tracking-widest">
-                                <span className="flex items-center gap-2">
-                                    <Calendar className="w-4 h-4 text-primary" />
-                                    {new Date(post.publishedAt || post.createdAt).toLocaleDateString('en-US', {
-                                        month: 'short',
-                                        day: 'numeric',
-                                        year: 'numeric'
-                                    })}
-                                </span>
-                                <span className="flex items-center gap-2">
-                                    <User className="w-4 h-4 text-primary" />
-                                    {post.author?.username}
-                                </span>
-                                <span className="flex items-center gap-2">
-                                    <Clock className="w-4 h-4 text-primary" />
-                                    8 min read
-                                </span>
-                            </div>
-                        </motion.div>
-                    </div>
-                </div>
-
-                {/* Back Button Overlay */}
-                <div className="absolute top-8 left-8 z-20">
+            {/* Back Button - Fixed at top */}
+            <div className="sticky top-20 z-40 bg-white/95 backdrop-blur-sm border-b border-gray-100 py-4">
+                <div className="container mx-auto px-4">
                     <Link
                         href="/news"
-                        className="flex items-center gap-2 bg-white text-gray-900 shadow-lg px-6 py-3 rounded-2xl hover:bg-primary hover:text-white transition-all duration-300 font-bold uppercase text-xs tracking-widest group"
+                        className="inline-flex items-center gap-2 text-gray-700 hover:text-primary font-bold text-sm transition-colors group"
                     >
                         <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
                         Back to News
                     </Link>
+                </div>
+            </div>
+
+            {/* Post Header / Hero - Responsive */}
+            <div className="relative w-full mb-8 md:mb-12 overflow-hidden">
+                {/* Featured Image */}
+                <div className="relative h-[40vh] md:h-[50vh] max-h-[400px] md:max-h-[500px] w-full">
+                    <img
+                        src={post.featuredImage || '/blog_placeholder.png'}
+                        alt={post.title}
+                        className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent"></div>
+                </div>
+
+                {/* Title and Meta - Overlapping bottom of image */}
+                <div className="relative -mt-20 md:-mt-32">
+                    <div className="container mx-auto px-4">
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6 }}
+                            className="max-w-4xl mx-auto"
+                        >
+                            {/* Category Badge */}
+                            <span className="inline-block px-3 py-1 md:px-4 md:py-1.5 bg-primary text-white text-[9px] md:text-[10px] font-black uppercase tracking-wider rounded-lg mb-3 md:mb-4 shadow-lg">
+                                {post.category?.name || 'News'}
+                            </span>
+
+                            {/* Title */}
+                            <h1 className="text-2xl md:text-4xl lg:text-5xl font-black text-white mb-4 md:mb-6 leading-tight uppercase tracking-tight drop-shadow-lg">
+                                {post.title}
+                            </h1>
+
+                            {/* Meta Information */}
+                            <div className="flex flex-wrap items-center gap-3 md:gap-6 text-white/90 text-xs md:text-sm font-bold uppercase tracking-wide mb-6 md:mb-8">
+                                <span className="flex items-center gap-1.5 md:gap-2">
+                                    <Calendar className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary" />
+                                    <span className="text-[10px] md:text-xs">
+                                        {new Date(post.publishedAt || post.createdAt).toLocaleDateString('en-US', {
+                                            month: 'short',
+                                            day: 'numeric',
+                                            year: 'numeric'
+                                        })}
+                                    </span>
+                                </span>
+                                <span className="flex items-center gap-1.5 md:gap-2">
+                                    <User className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary" />
+                                    <span className="text-[10px] md:text-xs">{post.author?.username}</span>
+                                </span>
+                                <span className="flex items-center gap-1.5 md:gap-2">
+                                    <Clock className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary" />
+                                    <span className="text-[10px] md:text-xs">8 min read</span>
+                                </span>
+                            </div>
+                        </motion.div>
+                    </div>
                 </div>
             </div>
 
