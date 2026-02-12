@@ -33,7 +33,7 @@ const Hero = () => {
 
                             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
                                 <Link
-                                    href="https://academy.tarajusiddhant.com"
+                                    href="https://academy.tarajusiddhant.com/memberships"
                                     target="_blank"
                                     className="px-8 py-4 bg-primary text-white font-bold rounded-full hover:bg-primary-700 transition-all duration-300 shadow-xl hover:shadow-primary/30 transform hover:-translate-y-1 flex items-center justify-center gap-2"
                                 >

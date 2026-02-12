@@ -7,6 +7,7 @@ import AboutSection from '@/components/home/AboutSection'
 import PricingSection from '@/components/home/PricingSection'
 import WhyChooseUs from '@/components/home/WhyChooseUs'
 import TestimonialSection from '@/components/home/TestimonialSection'
+import FAQSection from '@/components/home/FAQSection'
 
 export default function HomePage() {
     const stats = [
@@ -39,6 +40,7 @@ export default function HomePage() {
             <PricingSection />
             <WhyChooseUs />
             <TestimonialSection />
+            <FAQSection />
 
             {/* Info Section - CTA to LMS */}
             <section className="py-20 bg-white">

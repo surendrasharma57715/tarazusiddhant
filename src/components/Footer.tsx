@@ -9,8 +9,8 @@ const Footer = () => {
     const quickLinks = [
         { name: 'Home', href: '/' },
         { name: 'About Us', href: '/about' },
-        { name: 'Courses', href: '/courses' },
-        { name: 'Blog', href: '/blog' },
+        { name: 'Courses', href: 'https://academy.tarajusiddhant.com/courses' },
+        { name: 'Blog', href: '/news' },
         { name: 'Contact', href: '/contact' },
     ]
 
@@ -95,12 +95,14 @@ const Footer = () => {
                         <ul className="space-y-2">
                             {courses.map((course) => (
                                 <li key={course.name}>
-                                    <Link
+                                    <a
                                         href={course.href}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
                                         className="text-gray-400 hover:text-primary transition-colors duration-200 text-sm"
                                     >
                                         {course.name}
-                                    </Link>
+                                    </a>
                                 </li>
                             ))}
                         </ul>

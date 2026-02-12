@@ -26,7 +26,7 @@ const Header = () => {
             href: '#',
             dropdown: [
                 { name: 'FREE COURSE', href: 'https://www.youtube.com/@LTP1977' },
-                { name: 'PAID COURSE', href: 'https://academy.tarajusiddhant.com/' },
+                { name: 'PAID COURSE', href: 'https://academy.tarajusiddhant.com/courses' },
             ]
         },
         { name: 'GALLERY', href: '/gallery' },
@@ -148,7 +148,7 @@ const Header = () => {
                         {/* CTA Button - Desktop */}
                         <div className="hidden lg:block">
                             <Link
-                                href="https://academy.tarajusiddhant.com"
+                                href="https://academy.tarajusiddhant.com/memberships"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-primary to-purple-500 text-white font-semibold rounded-full hover:from-primary-700 hover:to-purple-600 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5"
@@ -242,7 +242,7 @@ const Header = () => {
                                         className="pt-4"
                                     >
                                         <Link
-                                            href="https://academy.tarajusiddhant.com"
+                                            href="https://academy.tarajusiddhant.com/memberships"
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             onClick={() => setIsMenuOpen(false)}
