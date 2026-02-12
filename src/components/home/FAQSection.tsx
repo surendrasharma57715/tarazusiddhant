@@ -129,7 +129,7 @@ const FAQSection = () => {
                         className="mt-16 text-center bg-gray-50 border border-gray-100 rounded-[2.5rem] p-8 md:p-12 shadow-inner"
                     >
                         <h4 className="text-xl font-black text-gray-900 mb-2 uppercase tracking-tight">Still have questions?</h4>
-                        <p className="text-gray-500 mb-8 font-medium">We're here to help you start your trading journey with confidence.</p>
+                        <p className="text-gray-500 mb-8 font-medium">We&apos;re here to help you start your trading journey with confidence.</p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a
                                 href="https://wa.me/918209203234"
