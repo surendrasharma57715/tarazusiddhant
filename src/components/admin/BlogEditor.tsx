@@ -15,7 +15,11 @@ import {
 } from 'lucide-react'
 import RichTextEditor from './RichTextEditor'
 import { generateSlug, cn } from '@/lib/utils'
-import { toast } from 'react-hot-toast' // I'll assume standard notification pattern or use alerts
+// import { toast } from 'react-hot-toast'
+const toast = {
+    success: (msg: string) => alert(msg),
+    error: (msg: string) => alert(msg)
+};
 
 interface Category {
     id: number
