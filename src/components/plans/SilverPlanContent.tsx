@@ -63,7 +63,7 @@ const SilverPlanContent = () => {
             <Header />
 
             {/* Hero Section */}
-            <section className="relative pt-32 pb-20 overflow-hidden">
+            <section className="relative pt-40 pb-20 overflow-hidden">
                 <div className="absolute top-0 left-0 w-full h-full pointer-events-none -z-10">
                     <div className="absolute -top-24 -right-24 w-96 h-96 bg-primary/10 rounded-full blur-[100px]"></div>
                     <div className="absolute top-1/2 -left-24 w-72 h-72 bg-purple-500/10 rounded-full blur-[80px]"></div>
