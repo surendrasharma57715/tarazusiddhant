@@ -1,4 +1,5 @@
 # Tarazo Sidhaant - Trading Education Website
+<!-- Triggering deployment from new client repository - Hands-off handover -->
 
 A modern, high-performance marketing website for Tarazo Sidhaant Trading Academy built with Next.js 14, React, and Tailwind CSS.
 
