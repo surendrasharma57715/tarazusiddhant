@@ -103,7 +103,7 @@ const SilverPlanContent = () => {
             <section className="py-20 bg-gray-50">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold mb-4 text-text-primary">What's Included in Silver?</h2>
+                        <h2 className="text-3xl md:text-5xl font-bold mb-4 text-text-primary">What&apos;s Included in Silver?</h2>
                         <p className="text-text-secondary">Everything you need to build a rock-solid foundation in the markets.</p>
                     </div>
 

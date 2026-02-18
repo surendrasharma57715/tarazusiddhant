@@ -13,13 +13,7 @@ export default function BlogPostPage() {
     const [post, setPost] = useState<any>(null)
     const [isLoading, setIsLoading] = useState(true)
 
-    useEffect(() => {
-        if (slug) {
-            fetchPost()
-        }
-    }, [slug])
-
-    const fetchPost = async () => {
+    const fetchPost = React.useCallback(async () => {
         setIsLoading(true)
         try {
             const res = await fetch(`/api/blog/${slug}`)
@@ -32,7 +26,13 @@ export default function BlogPostPage() {
         } finally {
             setIsLoading(false)
         }
-    }
+    }, [slug])
+
+    useEffect(() => {
+        if (slug) {
+            fetchPost()
+        }
+    }, [slug, fetchPost])
 
     if (isLoading) {
         return (
@@ -102,10 +102,13 @@ export default function BlogPostPage() {
                 >
                     {/* Featured Image */}
                     <div className="relative w-full h-[250px] md:h-[400px] lg:h-[500px]">
-                        <img
+                        <Image
                             src={post.featuredImage || '/blog_placeholder.png'}
                             alt={post.title}
+                            width={1200}
+                            height={600}
                             className="w-full h-full object-cover"
+                            priority
                         />
                     </div>
 

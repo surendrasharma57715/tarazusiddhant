@@ -13,6 +13,7 @@ import {
     Globe,
     ArrowLeft
 } from 'lucide-react'
+import Image from 'next/image'
 import RichTextEditor from './RichTextEditor'
 import { generateSlug, cn } from '@/lib/utils'
 // import { toast } from 'react-hot-toast'
@@ -254,9 +255,11 @@ export default function BlogEditor({ initialData, isEditing = false }: BlogEdito
                             <div className="relative aspect-video bg-gray-50 rounded-2xl border-2 border-dashed border-gray-200 overflow-hidden group">
                                 {formData.featuredImage ? (
                                     <>
-                                        <img
+                                        <Image
                                             src={formData.featuredImage}
                                             alt="Featured"
+                                            width={800}
+                                            height={450}
                                             className="w-full h-full object-cover transition-transform group-hover:scale-110"
                                         />
                                         <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">

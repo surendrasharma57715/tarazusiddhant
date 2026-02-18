@@ -15,6 +15,7 @@ import {
     FileImage,
     MoreVertical
 } from 'lucide-react'
+import Image from 'next/image'
 import { format } from 'date-fns'
 import { formatFileSize, cn } from '@/lib/utils'
 
@@ -169,9 +170,11 @@ export default function AdminMediaPage() {
                         {filteredMedia.map((item) => (
                             <div key={item.id} className="group bg-white rounded-3xl overflow-hidden shadow-md border border-gray-100 hover:border-primary/20 hover:shadow-xl transition-all relative">
                                 <div className="aspect-square relative overflow-hidden bg-gray-50">
-                                    <img
+                                    <Image
                                         src={item.filePath}
                                         alt={item.originalName}
+                                        width={200}
+                                        height={200}
                                         className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                     />
                                     <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex flex-col items-center justify-center gap-2 p-4 text-center">
@@ -225,7 +228,13 @@ export default function AdminMediaPage() {
                                     <tr key={item.id} className="hover:bg-gray-50/50 transition-colors group">
                                         <td className="px-6 py-3">
                                             <div className="w-12 h-12 rounded-xl border border-gray-100 overflow-hidden bg-gray-50">
-                                                <img src={item.filePath} className="w-full h-full object-cover" />
+                                                <Image
+                                                    src={item.filePath}
+                                                    alt={item.originalName}
+                                                    width={100}
+                                                    height={100}
+                                                    className="w-full h-full object-cover"
+                                                />
                                             </div>
                                         </td>
                                         <td className="px-6 py-3">

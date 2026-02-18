@@ -15,11 +15,7 @@ export default function NewsPage() {
     const [selectedCategory, setSelectedCategory] = useState('All')
     const [searchQuery, setSearchQuery] = useState('')
 
-    useEffect(() => {
-        fetchPosts()
-    }, [selectedCategory])
-
-    const fetchPosts = async () => {
+    const fetchPosts = React.useCallback(async () => {
         setIsLoading(true)
         try {
             const query = new URLSearchParams({
@@ -36,7 +32,11 @@ export default function NewsPage() {
         } finally {
             setIsLoading(false)
         }
-    }
+    }, [selectedCategory, searchQuery])
+
+    useEffect(() => {
+        fetchPosts()
+    }, [fetchPosts])
 
     const handleSearch = (e: React.FormEvent) => {
         e.preventDefault()
@@ -135,9 +135,11 @@ export default function NewsPage() {
                                 >
                                     {/* Thumbnail */}
                                     <div className="relative h-60 overflow-hidden">
-                                        <img
+                                        <Image
                                             src={post.featuredImage || '/blog_placeholder.png'}
                                             alt={post.title}
+                                            width={600}
+                                            height={400}
                                             className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
