@@ -129,8 +129,8 @@ const PricingSection = () => {
                             </div>
 
                             <Link
-                                href="https://academy.tarajusiddhant.com/memberships"
-                                target="_blank"
+                                href={plan.name === 'Silver Membership' ? '/membership/silver' : 'https://academy.tarajusiddhant.com/memberships'}
+                                target={plan.name === 'Silver Membership' ? '_self' : '_blank'}
                                 className={`w-full py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all duration-300 ${plan.popular
                                     ? 'bg-primary text-white hover:bg-primary-700 shadow-lg shadow-primary/20'
                                     : 'bg-gray-100 text-text-primary hover:bg-gray-200'
