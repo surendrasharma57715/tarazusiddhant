@@ -14,7 +14,7 @@ const SettingsPage = () => {
             icon: User,
             items: [
                 { label: 'Name', value: session?.user?.name || 'Admin' },
-                { label: 'Email', value: session?.user?.email || 'admin@tarajusiddhant.com' },
+                { label: 'Email', value: session?.user?.email || 'surendrasharmaltp@gmail.com' },
                 { label: 'Role', value: session?.user?.role || 'Administrator' },
             ]
         },

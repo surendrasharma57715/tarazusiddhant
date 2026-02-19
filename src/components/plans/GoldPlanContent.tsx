@@ -4,8 +4,6 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { Check, Shield, Star, Zap, ArrowRight, BookOpen, Users, Target, BarChart3, Clock, Play, GraduationCap, TrendingUp, Presentation } from 'lucide-react'
 import Link from 'next/link'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
 
 const GoldPlanContent = () => {
     const features = [
@@ -59,8 +57,7 @@ const GoldPlanContent = () => {
     ]
 
     return (
-        <main className="min-h-screen bg-white">
-            <Header />
+        <div className="min-h-screen bg-white">
 
             {/* Hero Section */}
             <section className="relative pt-40 pb-20 overflow-hidden">
@@ -197,8 +194,7 @@ const GoldPlanContent = () => {
                 </div>
             </section>
 
-            <Footer />
-        </main>
+        </div>
     )
 }
 

@@ -110,7 +110,7 @@ function LoginForm() {
                                     type="email"
                                     id="email"
                                     className="w-full pl-12 pr-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                                    placeholder="admin@example.com"
+                                    placeholder="surendrasharmaltp@gmail.com"
                                 />
                             </div>
                             {errors.email && (

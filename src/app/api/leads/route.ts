@@ -3,7 +3,7 @@ import { getServerSession } from 'next-auth'
 import { authOptions } from '@/lib/auth'
 import { prisma } from '@/lib/db'
 import { createLeadSchema, paginationSchema } from '@/lib/validation'
-import { sanitizeInput } from '@/lib/security'
+import { sanitizeInput, checkRateLimit } from '@/lib/security'
 
 // GET /api/leads - List all leads with pagination and search
 export async function GET(request: NextRequest) {
@@ -63,6 +63,17 @@ export async function GET(request: NextRequest) {
 // POST /api/leads - Create new lead (public endpoint for contact forms)
 export async function POST(request: NextRequest) {
     try {
+        // Rate limiting: 5 requests per minute per IP
+        const ip = request.headers.get('x-forwarded-for') || 'anonymous'
+        const limit = checkRateLimit(`lead-submission-${ip}`, 5, 60000)
+
+        if (!limit.allowed) {
+            return NextResponse.json(
+                { error: 'Too many requests. Please try again in a minute.' },
+                { status: 429 }
+            )
+        }
+
         const body = await request.json()
 
         // Validate input
