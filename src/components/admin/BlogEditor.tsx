@@ -272,7 +272,7 @@ export default function BlogEditor({ initialData, isEditing = false }: BlogEdito
                                 ) : (
                                     <label className="absolute inset-0 cursor-pointer flex flex-col items-center justify-center text-gray-400 hover:text-primary hover:bg-primary/5 transition-all">
                                         <Upload className="w-8 h-8 mb-2" />
-                                        <span className="text-sm font-bold uppercase tracking-wider">Upload Cover</span>
+                                        <span className="text-sm font-bold uppercase tracking-wider">Upload Cover <span className="text-[10px] opacity-60">(Max 300KB)</span></span>
                                         <input type="file" className="hidden" onChange={handleImageUpload} accept="image/*" />
                                     </label>
                                 )}

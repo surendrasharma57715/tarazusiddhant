@@ -60,8 +60,8 @@ export const imageUploadSchema = z.object({
     file: z.custom<File>((file) => {
         if (!(file instanceof File)) return false
 
-        // Check file size (5MB max)
-        if (file.size > 5 * 1024 * 1024) return false
+        // Check file size (300KB max)
+        if (file.size > 300 * 1024) return false
 
         // Check file type
         const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif']
@@ -69,7 +69,7 @@ export const imageUploadSchema = z.object({
 
         return true
     }, {
-        message: 'File must be an image (JPEG, PNG, WebP, or GIF) and less than 5MB',
+        message: 'File must be an image (JPEG, PNG, WebP, or GIF) and less than 300KB',
     }),
 })
 

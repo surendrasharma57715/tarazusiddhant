@@ -34,11 +34,11 @@ export function escapeHtml(text: string): string {
  * Validate file upload security
  */
 export function validateFileUpload(file: File): { valid: boolean; error?: string } {
-    const maxSize = 5 * 1024 * 1024 // 5MB
+    const maxSize = 300 * 1024 // 300KB
     const allowedTypes = ['image/jpeg', 'image/png', 'image/webp', 'image/gif']
 
     if (file.size > maxSize) {
-        return { valid: false, error: 'File size must be less than 5MB' }
+        return { valid: false, error: 'File size must be less than 300KB' }
     }
 
     if (!allowedTypes.includes(file.type)) {

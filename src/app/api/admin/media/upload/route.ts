@@ -26,9 +26,9 @@ export async function POST(request: NextRequest) {
             return NextResponse.json({ error: 'Invalid file type. Only images are allowed.' }, { status: 400 })
         }
 
-        // Validate file size (5MB)
-        if (file.size > 5 * 1024 * 1024) {
-            return NextResponse.json({ error: 'File too large. Max size is 5MB.' }, { status: 400 })
+        // Validate file size (300KB)
+        if (file.size > 300 * 1024) {
+            return NextResponse.json({ error: 'File too large. Max size is 300KB.' }, { status: 400 })
         }
 
         const buffer = Buffer.from(await file.arrayBuffer())

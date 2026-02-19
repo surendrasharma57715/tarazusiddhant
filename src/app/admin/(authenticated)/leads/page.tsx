@@ -42,6 +42,7 @@ export default function AdminLeadsPage() {
     const [page, setPage] = useState(1)
     const [totalPages, setTotalPages] = useState(1)
     const [isExporting, setIsExporting] = useState(false)
+    const [openMenuId, setOpenMenuId] = useState<number | null>(null)
 
     useEffect(() => {
         fetchLeads()
@@ -84,6 +85,7 @@ export default function AdminLeadsPage() {
             })
             if (res.ok) {
                 fetchLeads()
+                setOpenMenuId(null)
             }
         } catch (error) {
             console.error('Error updating status:', error)
@@ -98,6 +100,7 @@ export default function AdminLeadsPage() {
             })
             if (res.ok) {
                 fetchLeads()
+                setOpenMenuId(null)
             }
         } catch (error) {
             console.error('Error deleting lead:', error)
@@ -244,21 +247,39 @@ export default function AdminLeadsPage() {
                                                 >
                                                     <Eye className="w-5 h-5" />
                                                 </Link>
-                                                <div className="relative group/menu">
-                                                    <button className="p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all">
+                                                <div className="relative">
+                                                    <button
+                                                        onClick={(e) => {
+                                                            e.stopPropagation()
+                                                            setOpenMenuId(openMenuId === lead.id ? null : lead.id)
+                                                        }}
+                                                        className={cn(
+                                                            "p-2 text-gray-400 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-all",
+                                                            openMenuId === lead.id && "bg-gray-100 text-gray-900"
+                                                        )}
+                                                    >
                                                         <MoreVertical className="w-5 h-5" />
                                                     </button>
-                                                    <div className="absolute right-0 bottom-full mb-2 w-48 bg-white rounded-xl shadow-xl border border-gray-100 py-2 hidden group-hover/menu:block z-20">
-                                                        <div className="px-3 py-1 text-xs font-bold text-gray-400 uppercase">Set Status</div>
-                                                        <button onClick={() => updateLeadStatus(lead.id, 'PENDING')} className="w-full text-left px-4 py-2 text-sm hover:bg-yellow-50 text-yellow-700">Pending</button>
-                                                        <button onClick={() => updateLeadStatus(lead.id, 'CONTACTED')} className="w-full text-left px-4 py-2 text-sm hover:bg-blue-50 text-blue-700">Contacted</button>
-                                                        <button onClick={() => updateLeadStatus(lead.id, 'CONVERTED')} className="w-full text-left px-4 py-2 text-sm hover:bg-green-50 text-green-700">Converted</button>
-                                                        <button onClick={() => updateLeadStatus(lead.id, 'REJECTED')} className="w-full text-left px-4 py-2 text-sm hover:bg-red-50 text-red-700">Rejected</button>
-                                                        <div className="border-t border-gray-100 my-1"></div>
-                                                        <button onClick={() => deleteLead(lead.id)} className="w-full text-left px-4 py-2 text-sm hover:bg-red-50 text-red-600 flex items-center gap-2">
-                                                            <Trash2 className="w-4 h-4" /> Delete Lead
-                                                        </button>
-                                                    </div>
+
+                                                    {openMenuId === lead.id && (
+                                                        <>
+                                                            <div
+                                                                className="fixed inset-0 z-10"
+                                                                onClick={() => setOpenMenuId(null)}
+                                                            />
+                                                            <div className="absolute right-0 top-full mt-1 w-48 bg-white rounded-xl shadow-2xl border border-gray-100 py-2 z-20 animate-in fade-in slide-in-from-top-2 duration-200">
+                                                                <div className="px-3 py-1 text-xs font-bold text-gray-400 uppercase">Set Status</div>
+                                                                <button onClick={() => updateLeadStatus(lead.id, 'PENDING')} className="w-full text-left px-4 py-2 text-sm hover:bg-yellow-50 text-yellow-700 transition-colors">Pending</button>
+                                                                <button onClick={() => updateLeadStatus(lead.id, 'CONTACTED')} className="w-full text-left px-4 py-2 text-sm hover:bg-blue-50 text-blue-700 transition-colors">Contacted</button>
+                                                                <button onClick={() => updateLeadStatus(lead.id, 'CONVERTED')} className="w-full text-left px-4 py-2 text-sm hover:bg-green-50 text-green-700 transition-colors">Converted</button>
+                                                                <button onClick={() => updateLeadStatus(lead.id, 'REJECTED')} className="w-full text-left px-4 py-2 text-sm hover:bg-red-50 text-red-700 transition-colors">Rejected</button>
+                                                                <div className="border-t border-gray-100 my-1"></div>
+                                                                <button onClick={() => deleteLead(lead.id)} className="w-full text-left px-4 py-2 text-sm hover:bg-red-50 text-red-600 flex items-center gap-2 transition-colors">
+                                                                    <Trash2 className="w-4 h-4" /> Delete Lead
+                                                                </button>
+                                                            </div>
+                                                        </>
+                                                    )}
                                                 </div>
                                             </div>
                                         </td>

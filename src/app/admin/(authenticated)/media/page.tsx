@@ -87,12 +87,24 @@ export default function AdminMediaPage() {
 
     const deleteMedia = async (id: number) => {
         if (!confirm('Are you sure you want to delete this file? This might break posts using it.')) return
+
+        setIsLoading(true)
         try {
-            // I should implement a DELETE route for media too, but for now I'll skip it or add it later if needed.
-            // For now let's assume it works or just alert.
-            alert('Delete functionality for media is being refined to check usage first.')
+            const res = await fetch(`/api/admin/media/${id}`, {
+                method: 'DELETE'
+            })
+
+            if (res.ok) {
+                fetchMedia()
+            } else {
+                const err = await res.json()
+                alert(err.error || 'Failed to delete media')
+                setIsLoading(false)
+            }
         } catch (error) {
             console.error('Error deleting media:', error)
+            alert('An unexpected error occurred during deletion')
+            setIsLoading(false)
         }
     }
 
@@ -114,7 +126,7 @@ export default function AdminMediaPage() {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
                 <div>
                     <h1 className="text-3xl font-bold text-gray-900">Media Library</h1>
-                    <p className="text-gray-600">Manage your uploaded assets and images</p>
+                    <p className="text-gray-600">Manage your uploaded assets and images <span className="text-primary font-bold">(Max 300KB)</span></p>
                 </div>
                 <label className="flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-primary to-purple-600 text-white rounded-xl hover:shadow-lg transition-all font-bold shadow-md cursor-pointer active:scale-95">
                     {isUploading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Upload className="w-5 h-5" />}
