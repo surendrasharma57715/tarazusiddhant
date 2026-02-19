@@ -17,13 +17,16 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-    title: 'Tarazu Siddhant - Trading Education Mentor | Option Chain Tarazu Principle',
-    description: 'Learn stock market trading with Surendra Kumar Sharma. Master Option Chain analysis, intraday trading, and risk management with 95% success rate. Join 2000+ successful students.',
-    keywords: 'trading education, option chain analysis, taraju siddhant, stock market courses, intraday trading, nifty trading, trading mentor',
+    title: 'Tarazu Siddhant - Best Trading Course in Jaipur | LTP Calculator Online',
+    description: 'Master the Option Chain Tarazu Principle with Surendra Kumar Sharma. Join Tarazu Siddhant Academy for the best stock market course and Intraday strategies in Jaipur. Free LTP Calculator tool available.',
+    keywords: 'LTP Calculator, LTP Calculator Online, Free LTP Calculator, LTP Calculator for Intraday, Trading LTP Calculator India, LTP Calculator Tool, Advanced LTP Calculator, Best LTP Calculator India, LTP Calculator Jaipur, Tarazu Siddhant, Tarazu Siddhant Trading Course, Tarazu Siddhant Academy, Tarazu Siddhant Jaipur, Tarazu Siddhant Stock Market Course, Tarazu Siddhant Intraday Strategy, Tarazu Siddhant Classes Jaipur, Tarazu Siddhant Office Jaipur, Tarazu Siddhant Trading Institute, Join Tarazu Siddhant Course, Taraju Siddhant, Taraju Siddhant Trading Course, Taraju Siddhant Academy, option chain analysis, trading education',
     authors: [{ name: 'Surendra Kumar Sharma' }],
+    icons: {
+        icon: '/favicon.svg',
+    },
     openGraph: {
-        title: 'Tarazu Siddhant - Trading Education Mentor',
-        description: 'Learn stock market trading with expert guidance. Master Option Chain Tarazu Principle.',
+        title: 'Tarazu Siddhant - Best Trading Education Mentor',
+        description: 'Learn stock market trading with Tarazu Siddhant Academy. Master Option Chain analysis and use our LTP Calculator Tool.',
         url: 'https://tarajusiddhant.com',
         siteName: 'Tarazu Siddhant Academy',
         locale: 'en_IN',
@@ -31,8 +34,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Tarazu Siddhant - Trading Education Mentor',
-        description: 'Learn stock market trading with expert guidance',
+        title: 'Tarazu Siddhant - Trading Education Mentor & LTP Calculator',
+        description: 'Learn stock market trading with expert guidance and advanced tools.',
     },
     robots: {
         index: true,
