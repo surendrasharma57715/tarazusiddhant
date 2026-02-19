@@ -2,60 +2,60 @@
 
 import React from 'react'
 import { motion } from 'framer-motion'
-import { Check, Shield, Star, Zap, ArrowRight, BookOpen, Users, Target, BarChart3, Clock, Play } from 'lucide-react'
+import { Check, Shield, Star, Zap, ArrowRight, BookOpen, Users, Target, BarChart3, Clock, Play, Crown, Diamond, MessageSquare, UserCheck, Video } from 'lucide-react'
 import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
-const SilverPlanContent = () => {
+const DiamondPlanContent = () => {
     const features = [
         {
-            title: "Basic Live Classes",
-            description: "Join interactive live sessions where we break down market movements in real-time.",
+            title: "VIP 1-on-1 Mentorship",
+            description: "Personalized sessions with Siddhanth sir to refine your trading style and psychology.",
+            icon: UserCheck,
+            color: "bg-primary"
+        },
+        {
+            title: "VIP Mentorship Circle",
+            description: "Access to our most exclusive community where elite traders share high-signal insights.",
+            icon: Crown,
+            color: "bg-purple-600"
+        },
+        {
+            title: "Everything in Gold",
+            description: "Includes all features of Silver and Gold plans, plus all future course updates.",
+            icon: Diamond,
+            color: "bg-blue-600"
+        },
+        {
+            title: "45-Min Weekly Sessions",
+            description: "Dedicated weekly calls to review your trades and fix execution errors.",
+            icon: Video,
+            color: "bg-indigo-600"
+        },
+        {
+            title: "Live & Recorded Classes",
+            description: "Watch live or review the highest quality recordings of every single session we ever hold.",
             icon: Play,
-            color: "bg-blue-500"
+            color: "bg-pink-600"
         },
         {
-            title: "Master the Fundamentals",
-            description: "Comprehensive modules covering everything from market structure to technical analysis basics.",
-            icon: BookOpen,
-            color: "bg-purple-500"
-        },
-        {
-            title: "Tarazu Principle Basics",
-            description: "Exclusive introduction to our signature methodology for balanced and disciplined trading.",
-            icon: BarChart3,
-            color: "bg-indigo-500"
-        },
-        {
-            title: "Private Community",
-            description: "Connect with fellow students and mentors in our dedicated Silver support group.",
-            icon: Users,
-            color: "bg-green-500"
-        },
-        {
-            title: "Core Trading Strategies",
-            description: "Learn 3 proven strategies specifically designed for beginners to ensure safe market entry.",
-            icon: Target,
-            color: "bg-red-500"
-        },
-        {
-            title: "3 Months Access",
-            description: "Full access to all silver content and community for a complete quarter.",
-            icon: Clock,
-            color: "bg-amber-500"
+            title: "24/7 VIP Support",
+            description: "Direct line to our core mentors for immediate resolution of your trading queries.",
+            icon: MessageSquare,
+            color: "bg-cyan-600"
         }
     ]
 
     const curriculum = [
-        "Stock Market Ecosystem & Players",
-        "Japanese Candlestick Patterns 101",
-        "Support & Resistance Identification",
-        "Trend Analysis & Market Cycles",
-        "Introduction to Options Trading",
-        "The Core Tarazu Siddhant Philosophy",
-        "Risk-to-Reward Ratio Fundamentals",
-        "Building a Trading Journal"
+        "Personalized Trading Blueprint",
+        "Mastering Institutional Order Flow",
+        "Proprietary Hedging Techniques",
+        "Advanced Psychology & Mindset",
+        "Portfolio Diversification Strategy",
+        "Legacy Wealth Building Systems",
+        "Direct Trade Review & Audit",
+        "Zero-Line Trading Methodology"
     ]
 
     return (
@@ -76,23 +76,23 @@ const SilverPlanContent = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.6 }}
                         >
-                            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gray-100 text-gray-600 text-sm font-bold tracking-wide uppercase mb-6 border border-gray-200">
-                                <Shield className="w-4 h-4 text-gray-400" /> Professional Membership
+                            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/5 text-primary text-sm font-bold tracking-wide uppercase mb-6 border border-primary/20">
+                                <Star className="w-4 h-4 text-primary" /> Elite Mentorship
                             </span>
                             <h1 className="text-4xl md:text-7xl font-extrabold text-heading mb-6 tracking-tight leading-tight text-text-primary">
-                                Launch Your Trading Career with the <span className="text-primary italic">Silver Plan</span>
+                                The Ultimate Path with the <span className="text-primary italic">Diamond Plan</span>
                             </h1>
                             <p className="text-lg md:text-xl text-text-secondary mb-10 leading-relaxed max-w-2xl mx-auto">
-                                The perfect foundation for aspiring traders. Master the Tarazu Siddhant methodology and start trading with confidence and discipline.
+                                Reserved for the most dedicated. Get personalized 1-on-1 guidance, weekly reviews, and join the inner circle of professional traders.
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                                 <Link
                                     href="https://academy.tarajusiddhant.com/memberships"
                                     className="px-8 py-4 bg-primary text-white font-bold rounded-2xl hover:bg-primary-700 transition-all duration-300 shadow-xl shadow-primary/20 flex items-center gap-2"
                                 >
-                                    Join Silver Membership <ArrowRight className="w-5 h-5" />
+                                    Join Diamond Membership <ArrowRight className="w-5 h-5" />
                                 </Link>
-                                <span className="text-sm font-semibold text-text-secondary">Used by 500+ budding traders</span>
+                                <span className="text-sm font-semibold text-text-secondary">Limited to 50 active mentees only</span>
                             </div>
                         </motion.div>
                     </div>
@@ -103,8 +103,8 @@ const SilverPlanContent = () => {
             <section className="py-20 bg-gray-50">
                 <div className="container mx-auto px-4">
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold mb-4 text-text-primary">What&apos;s Included in Silver?</h2>
-                        <p className="text-text-secondary">Everything you need to build a rock-solid foundation in the markets.</p>
+                        <h2 className="text-3xl md:text-5xl font-bold mb-4 text-text-primary">Elite Diamond Features</h2>
+                        <p className="text-text-secondary">Exclusive access and personalized training designed for market mastery.</p>
                     </div>
 
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -133,9 +133,9 @@ const SilverPlanContent = () => {
                 <div className="container mx-auto px-4">
                     <div className="flex flex-col lg:flex-row items-center gap-16">
                         <div className="lg:w-1/2">
-                            <h2 className="text-3xl md:text-5xl font-bold mb-8 text-text-primary">Curriculum Overview</h2>
+                            <h2 className="text-3xl md:text-5xl font-bold mb-8 text-text-primary">Elite Mentorship Path</h2>
                             <p className="text-text-secondary mb-10 leading-relaxed">
-                                Our Silver Plan is structured to take you from a total beginner to someone who can analyze the market independently using the Tarazu Siddhant framework.
+                                Our Diamond Plan isn&apos;t just a course—it&apos;s a partnership. We work closely with you to identify your unique psychological blocks and build a system that works for your life.
                             </p>
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {curriculum.map((item, idx) => (
@@ -159,26 +159,26 @@ const SilverPlanContent = () => {
                                     <div className="relative z-10">
                                         <div className="flex items-center gap-4 mb-8">
                                             <div className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center backdrop-blur-md">
-                                                <Star className="text-amber-400" />
+                                                <Crown className="text-amber-400" />
                                             </div>
                                             <div>
-                                                <h4 className="text-xl font-bold text-white">Standard Value</h4>
-                                                <p className="text-gray-400 text-sm">3 Months Professional Track</p>
+                                                <h4 className="text-xl font-bold text-white">Elite Mentorship</h4>
+                                                <p className="text-gray-400 text-sm">6 Months VIP Track</p>
                                             </div>
                                         </div>
 
                                         <div className="space-y-6 mb-10">
                                             <div className="flex justify-between items-center border-b border-white/10 pb-4">
                                                 <span className="text-gray-300">Enrollment Fee</span>
-                                                <span className="text-2xl font-bold text-white">₹7,299</span>
+                                                <span className="text-2xl font-bold text-white">₹41,555</span>
                                             </div>
                                             <div className="flex justify-between items-center border-b border-white/10 pb-4">
                                                 <span className="text-gray-300">Validity</span>
-                                                <span className="font-bold text-white">90 Days (3 Months)</span>
+                                                <span className="font-bold text-white">180 Days (6 Months)</span>
                                             </div>
                                             <div className="flex justify-between items-center border-b border-white/10 pb-4">
-                                                <span className="text-gray-300">Support</span>
-                                                <span className="font-bold text-white">24/7 Community</span>
+                                                <span className="text-gray-300">Direct Support</span>
+                                                <span className="font-bold text-white">Personal 1-on-1 Support</span>
                                             </div>
                                         </div>
 
@@ -186,7 +186,7 @@ const SilverPlanContent = () => {
                                             href="https://academy.tarajusiddhant.com/memberships"
                                             className="w-full py-5 bg-white text-dark font-black rounded-2xl flex items-center justify-center gap-3 hover:bg-gray-100 transition-all text-lg shadow-xl"
                                         >
-                                            BUY SILVER PLAN NOW <ArrowRight size={22} />
+                                            BUY DIAMOND PLAN NOW <ArrowRight size={22} />
                                         </Link>
                                     </div>
                                     <div className="absolute top-0 right-0 w-64 h-64 bg-primary/20 rounded-full blur-[80px] -mr-32 -mt-32"></div>
@@ -197,10 +197,9 @@ const SilverPlanContent = () => {
                 </div>
             </section>
 
-
             <Footer />
         </main>
     )
 }
 
-export default SilverPlanContent
+export default DiamondPlanContent
