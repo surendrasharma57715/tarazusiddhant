@@ -16,6 +16,18 @@ export const createAdminSchema = z.object({
     role: z.enum(['ADMIN', 'EDITOR']).optional(),
 })
 
+export const updatePasswordSchema = z.object({
+    currentPassword: z.string().min(1, 'Current password is required'),
+    newPassword: z.string().min(8, 'New password must be at least 8 characters').regex(
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)/,
+        'Password must contain at least one uppercase letter, one lowercase letter, and one number'
+    ),
+    confirmPassword: z.string().min(1, 'Please confirm your new password'),
+}).refine((data) => data.newPassword === data.confirmPassword, {
+    message: "Passwords don't match",
+    path: ["confirmPassword"],
+})
+
 // Lead validation
 export const createLeadSchema = z.object({
     name: z.string().min(2, 'Name must be at least 2 characters').max(100),
@@ -102,3 +114,4 @@ export type UpdateBlogPostInput = z.infer<typeof updateBlogPostSchema>
 export type PaginationInput = z.infer<typeof paginationSchema>
 export type SearchInput = z.infer<typeof searchSchema>
 export type FilterInput = z.infer<typeof filterSchema>
+export type UpdatePasswordInput = z.infer<typeof updatePasswordSchema>
