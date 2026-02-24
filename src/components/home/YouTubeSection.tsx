@@ -79,13 +79,16 @@ const YouTubeSection = () => {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
 
                                 {/* Channel Info Top */}
-                                <div className="absolute top-6 left-6 right-6 flex items-center justify-between pointer-events-none">
-                                    <div className="flex items-center gap-2">
-                                        <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center">
-                                            <TrendingUp className="text-white w-4 h-4" />
-                                        </div>
-                                        <span className="text-white text-xs font-bold tracking-tight">Tarazu Siddhant</span>
+                                <div className="absolute top-4 left-4 flex items-center gap-2 pointer-events-none">
+                                    <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+                                        <TrendingUp className="text-white w-5 h-5" />
                                     </div>
+                                    <div className="flex flex-col">
+                                        <span className="text-white text-[10px] font-bold leading-tight">Tarazu</span>
+                                        <span className="text-white text-[10px] font-bold leading-tight">Siddhant</span>
+                                    </div>
+                                </div>
+                                <div className="absolute top-4 right-4 pointer-events-none">
                                     <div className="p-1.5 rounded-full bg-white/10 backdrop-blur-sm">
                                         <Play className="text-white w-3 h-3 fill-current" />
                                     </div>
@@ -97,19 +100,18 @@ const YouTubeSection = () => {
                                     target="_blank"
                                     className="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
                                 >
-                                    <div className="w-16 h-16 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 group-hover:bg-primary group-hover:border-primary transition-all duration-300">
-                                        <div className="w-12 h-12 rounded-full bg-white flex items-center justify-center shadow-lg transform group-hover:scale-90 transition-transform duration-300">
-                                            <Play className="text-primary w-6 h-6 fill-current ml-1" />
+                                    <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 transition-all duration-300">
+                                        <div className="w-11 h-11 rounded-full bg-white flex items-center justify-center shadow-lg transform group-hover:scale-105 transition-transform duration-300">
+                                            <Play className="text-primary w-5 h-5 fill-current ml-1" />
                                         </div>
                                     </div>
                                 </Link>
 
                                 {/* Bottom Info */}
-                                <div className="absolute bottom-4 md:bottom-8 left-3 md:left-6 right-3 md:right-6 text-center pointer-events-none">
-                                    <div className="bg-white/90 backdrop-blur-md rounded-xl md:rounded-2xl py-2 md:py-3 px-2 md:px-4 shadow-xl mb-2 md:mb-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                        <span className="text-primary font-black text-[8px] md:text-xs uppercase tracking-wider">{video.label}</span>
+                                <div className="absolute bottom-4 left-3 right-3 flex flex-col items-center pointer-events-none">
+                                    <div className="bg-white rounded-xl py-3 px-4 shadow-xl w-full max-w-[140px] text-center transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                        <span className="text-primary font-black text-[10px] uppercase tracking-wider leading-tight">{video.label}</span>
                                     </div>
-                                    <p className="text-white text-[8px] md:text-[10px] font-bold tracking-widest uppercase opacity-60">tarajusiddhant.com</p>
                                 </div>
                             </div>
                         </motion.div>

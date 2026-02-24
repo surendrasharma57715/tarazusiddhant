@@ -86,22 +86,19 @@ const InstagramSection = () => {
                                 {/* Overlay Gradient */}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/40"></div>
 
-                                {/* Instagram Icon Top */}
-                                <div className="absolute top-6 right-6">
-                                    <div className="p-2 rounded-xl bg-white/10 backdrop-blur-md border border-white/20">
-                                        <Instagram className="text-white w-5 h-5 pointer-events-none" />
+                                {/* Channel Info Top */}
+                                <div className="absolute top-4 left-4 flex items-center gap-2 pointer-events-none">
+                                    <div className="w-8 h-8 rounded-lg bg-pink-600 flex items-center justify-center">
+                                        <Instagram className="text-white w-5 h-5" />
+                                    </div>
+                                    <div className="flex flex-col">
+                                        <span className="text-white text-[10px] font-bold leading-tight">Tarazu</span>
+                                        <span className="text-white text-[10px] font-bold leading-tight">Siddhant</span>
                                     </div>
                                 </div>
-
-                                {/* Likes & Comments Overlay */}
-                                <div className="absolute top-6 left-6 flex flex-col gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                                    <div className="flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
-                                        <Heart className="w-3 h-3 text-pink-500 fill-current" />
-                                        <span className="text-white text-[10px] font-bold">{reel.likes}</span>
-                                    </div>
-                                    <div className="flex items-center gap-1.5 bg-black/40 backdrop-blur-md px-3 py-1.5 rounded-full border border-white/10">
-                                        <MessageCircle className="w-3 h-3 text-blue-400 fill-current" />
-                                        <span className="text-white text-[10px] font-bold">{reel.comments}</span>
+                                <div className="absolute top-4 right-4 pointer-events-none">
+                                    <div className="p-1.5 rounded-full bg-white/10 backdrop-blur-sm">
+                                        <Instagram className="text-white w-3 h-3" />
                                     </div>
                                 </div>
 
@@ -109,20 +106,22 @@ const InstagramSection = () => {
                                 <Link
                                     href="https://www.instagram.com/tarajusiddhant.com_"
                                     target="_blank"
-                                    className="absolute inset-0 flex items-end p-4 md:p-8"
+                                    className="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
                                 >
-                                    <div className="w-full">
-                                        <div className="bg-white/95 backdrop-blur-md rounded-xl md:rounded-2xl p-2 md:p-4 shadow-xl transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                            <p className="text-heading font-black text-[10px] md:text-xs line-clamp-1 mb-1">{reel.title}</p>
-                                            <div className="flex items-center gap-1 md:gap-2">
-                                                <div className="w-3 h-3 md:w-4 md:h-4 rounded-full bg-gradient-to-tr from-orange-500 to-pink-600 flex items-center justify-center">
-                                                    <Instagram className="text-white w-1.5 h-1.5 md:w-2 md:h-2" />
-                                                </div>
-                                                <span className="text-pink-600 font-bold text-[8px] md:text-[10px] uppercase tracking-wider">Watch Reel</span>
-                                            </div>
+                                    <div className="w-14 h-14 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center border border-white/30 transition-all duration-300">
+                                        <div className="w-11 h-11 rounded-full bg-white flex items-center justify-center shadow-lg transform group-hover:scale-105 transition-transform duration-300">
+                                            <Instagram className="text-pink-600 w-5 h-5" />
                                         </div>
                                     </div>
                                 </Link>
+
+                                {/* Bottom Info */}
+                                <div className="absolute bottom-4 left-3 right-3 flex flex-col items-center pointer-events-none">
+                                    <div className="bg-white rounded-xl py-3 px-4 shadow-xl w-full max-w-[140px] text-center transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+                                        <p className="text-pink-600 font-black text-[10px] uppercase tracking-wider leading-tight line-clamp-1">{reel.title}</p>
+                                        <span className="text-pink-400 font-bold text-[8px] uppercase tracking-widest">Watch Reel</span>
+                                    </div>
+                                </div>
                             </div>
                         </motion.div>
                     ))}
