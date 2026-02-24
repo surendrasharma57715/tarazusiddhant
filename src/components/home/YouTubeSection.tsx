@@ -107,12 +107,6 @@ const YouTubeSection = () => {
                                     </div>
                                 </Link>
 
-                                {/* Bottom Info */}
-                                <div className="absolute bottom-4 left-3 right-3 flex flex-col items-center pointer-events-none">
-                                    <div className="bg-white rounded-xl py-3 px-4 shadow-xl w-full max-w-[140px] text-center transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
-                                        <span className="text-primary font-black text-[10px] uppercase tracking-wider leading-tight">{video.label}</span>
-                                    </div>
-                                </div>
                             </div>
                         </motion.div>
                     ))}
