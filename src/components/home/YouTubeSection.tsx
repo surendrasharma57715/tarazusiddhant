@@ -57,7 +57,7 @@ const YouTubeSection = () => {
                     </motion.div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 mb-16">
                     {videos.map((video, idx) => (
                         <motion.div
                             key={video.id}
@@ -67,7 +67,7 @@ const YouTubeSection = () => {
                             transition={{ duration: 0.5, delay: idx * 0.1 }}
                             className="group"
                         >
-                            <div className="relative aspect-[9/16] rounded-[2.5rem] overflow-hidden shadow-2xl border-4 border-white bg-dark">
+                            <div className="relative aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl border-2 md:border-4 border-white bg-dark">
                                 {/* Video Thumbnail */}
                                 <img
                                     src={`https://img.youtube.com/vi/${video.id}/maxresdefault.jpg`}
@@ -105,11 +105,11 @@ const YouTubeSection = () => {
                                 </Link>
 
                                 {/* Bottom Info */}
-                                <div className="absolute bottom-8 left-6 right-6 text-center pointer-events-none">
-                                    <div className="bg-white/90 backdrop-blur-md rounded-2xl py-3 px-4 shadow-xl mb-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                        <span className="text-primary font-black text-xs uppercase tracking-wider">{video.label}</span>
+                                <div className="absolute bottom-4 md:bottom-8 left-3 md:left-6 right-3 md:right-6 text-center pointer-events-none">
+                                    <div className="bg-white/90 backdrop-blur-md rounded-xl md:rounded-2xl py-2 md:py-3 px-2 md:px-4 shadow-xl mb-2 md:mb-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                        <span className="text-primary font-black text-[8px] md:text-xs uppercase tracking-wider">{video.label}</span>
                                     </div>
-                                    <p className="text-white text-[10px] font-bold tracking-widest uppercase opacity-60">tarajusiddhant.com</p>
+                                    <p className="text-white text-[8px] md:text-[10px] font-bold tracking-widest uppercase opacity-60">tarajusiddhant.com</p>
                                 </div>
                             </div>
                         </motion.div>
