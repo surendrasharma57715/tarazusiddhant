@@ -120,7 +120,7 @@ const YouTubeSection = () => {
                     <Link
                         href="https://www.youtube.com/@LTP1977"
                         target="_blank"
-                        className="inline-flex items-center px-12 py-5 bg-primary text-white font-black rounded-full hover:bg-primary/90 transition-all shadow-xl hover:shadow-primary/20 transform hover:-translate-y-1 uppercase tracking-widest text-sm"
+                        className="inline-flex items-center px-8 py-4 md:px-12 md:py-5 bg-primary text-white font-black rounded-full hover:bg-primary/90 transition-all shadow-xl hover:shadow-primary/20 transform hover:-translate-y-1 uppercase tracking-widest text-xs md:text-sm"
                     >
                         View More on YouTube
                     </Link>

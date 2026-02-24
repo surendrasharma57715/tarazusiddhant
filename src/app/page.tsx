@@ -63,13 +63,13 @@ export default function HomePage() {
                             <Link
                                 href="https://academy.tarajusiddhant.com"
                                 target="_blank"
-                                className="px-10 py-5 bg-white text-primary font-bold rounded-full hover:bg-gray-100 transition-all shadow-lg hover:shadow-white/20 transform hover:-translate-y-1"
+                                className="px-6 py-4 md:px-10 md:py-5 bg-white text-primary font-bold rounded-full hover:bg-gray-100 transition-all shadow-lg hover:shadow-white/20 transform hover:-translate-y-1 text-sm md:text-base"
                             >
                                 Go to Learning LMS
                             </Link>
                             <Link
                                 href="/contact"
-                                className="px-10 py-5 bg-transparent border-2 border-white/50 text-white font-bold rounded-full hover:bg-white/10 transition-all transform hover:-translate-y-1"
+                                className="px-6 py-4 md:px-10 md:py-5 bg-transparent border-2 border-white/50 text-white font-bold rounded-full hover:bg-white/10 transition-all transform hover:-translate-y-1 text-sm md:text-base"
                             >
                                 Contact Support
                             </Link>

@@ -132,7 +132,7 @@ const InstagramSection = () => {
                     <Link
                         href="https://www.instagram.com/tarajusiddhant.com_"
                         target="_blank"
-                        className="inline-flex items-center px-12 py-5 bg-gradient-to-r from-pink-600 to-orange-500 text-white font-black rounded-full hover:shadow-2xl hover:shadow-pink-500/20 transition-all transform hover:-translate-y-1 uppercase tracking-widest text-sm"
+                        className="inline-flex items-center px-8 py-4 md:px-12 md:py-5 bg-gradient-to-r from-pink-600 to-orange-500 text-white font-black rounded-full hover:shadow-2xl hover:shadow-pink-500/20 transition-all transform hover:-translate-y-1 uppercase tracking-widest text-xs md:text-sm"
                     >
                         Follow on Instagram
                     </Link>
