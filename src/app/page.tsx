@@ -9,6 +9,7 @@ import WhyChooseUs from '@/components/home/WhyChooseUs'
 import TestimonialSection from '@/components/home/TestimonialSection'
 import FAQSection from '@/components/home/FAQSection'
 import YouTubeSection from '@/components/home/YouTubeSection'
+import InstagramSection from '@/components/home/InstagramSection'
 
 export default function HomePage() {
     const stats = [
@@ -43,6 +44,7 @@ export default function HomePage() {
             <TestimonialSection />
             <FAQSection />
             <YouTubeSection />
+            <InstagramSection />
 
             {/* Info Section - CTA to LMS */}
             <section className="py-20 bg-white">
