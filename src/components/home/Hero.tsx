@@ -49,7 +49,7 @@ const Hero = () => {
                             </div>
 
                             {/* Trust Points */}
-                            <div className="grid grid-cols-2 gap-4 max-w-md mx-auto lg:mx-0">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-3 max-w-md mx-auto lg:mx-0">
                                 <div className="flex items-center gap-2 text-sm font-semibold text-text-primary">
                                     <CheckCircle2 className="w-5 h-5 text-green-500" /> Live Market Practice
                                 </div>
