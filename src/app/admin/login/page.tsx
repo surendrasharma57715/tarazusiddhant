@@ -169,12 +169,7 @@ function LoginForm() {
                         </motion.button>
                     </form>
 
-                    {/* Footer */}
-                    <div className="mt-8 text-center">
-                        <p className="text-gray-400 text-xs">
-                            Protected by enterprise-level security
-                        </p>
-                    </div>
+
                 </div>
 
                 {/* Back to website link */}
