@@ -39,5 +39,5 @@ export const SILVER_PLAN_DETAILS = {
         "Risk Management Essentials"
     ],
     cta: "Unlock Silver Membership Now",
-    ctaLink: "https://academy.tarajusiddhant.com/memberships"
+    ctaLink: "https://academy.tarazusiddhant.com/memberships"
 };

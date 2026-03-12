@@ -104,7 +104,7 @@ const InstagramSection = () => {
 
                                 {/* Click Overlay */}
                                 <Link
-                                    href="https://www.instagram.com/tarajusiddhant.com_"
+                                    href="https://www.instagram.com/tarazusiddhant.com_"
                                     target="_blank"
                                     className="absolute inset-0 flex items-center justify-center group-hover:scale-110 transition-transform duration-300"
                                 >
@@ -122,7 +122,7 @@ const InstagramSection = () => {
 
                 <div className="text-center">
                     <Link
-                        href="https://www.instagram.com/tarajusiddhant.com_"
+                        href="https://www.instagram.com/tarazusiddhant.com_"
                         target="_blank"
                         className="inline-flex items-center px-8 py-4 md:px-12 md:py-5 bg-gradient-to-r from-pink-600 to-orange-500 text-white font-black rounded-full hover:shadow-2xl hover:shadow-pink-500/20 transition-all transform hover:-translate-y-1 uppercase tracking-widest text-xs md:text-sm"
                     >

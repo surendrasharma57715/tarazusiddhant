@@ -61,7 +61,7 @@ const WhyChooseUs = () => {
                             Elevate Your <span className="text-primary italic">Trading Intelligence</span>
                         </h2>
                         <p className="text-lg text-text-secondary">
-                            We provide the bridge between theoretical knowledge and professional market execution with our unique Taraju methodology.
+                            We provide the bridge between theoretical knowledge and professional market execution with our unique Tarazu methodology.
                         </p>
                     </motion.div>
                 </div>

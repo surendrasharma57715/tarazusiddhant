@@ -92,7 +92,7 @@ npm run start
 
 ## 🔗 Links
 
-- **LMS Platform:** https://academy.tarajusiddhant.com/
+- **LMS Platform:** https://academy.tarazusiddhant.com/
 - **Documentation:** Coming soon
 
 ## 👨‍💻 Developer

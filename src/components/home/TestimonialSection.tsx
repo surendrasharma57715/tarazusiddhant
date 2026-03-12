@@ -27,7 +27,7 @@ const testimonials = [
     },
     {
         name: 'ANJALI GUPTA',
-        review: 'Transformative experience. My losses have significantly reduced since I started applying the Taraju logic for entry and exit.',
+        review: 'Transformative experience. My losses have significantly reduced since I started applying the Tarazu logic for entry and exit.',
         rating: 5
     },
     {

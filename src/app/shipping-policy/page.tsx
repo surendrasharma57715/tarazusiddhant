@@ -26,7 +26,7 @@ export default function ShippingPolicy() {
                         <section className="mb-10">
                             <h2 className="text-2xl font-bold text-heading mb-4">1. Overview</h2>
                             <p className="text-text-secondary mb-4">
-                                Taraju Siddhant operates as a digital-first educational platform. Since all our products and services are delivered electronically, traditional shipping does not apply to our business model.
+                                Tarazu Siddhant operates as a digital-first educational platform. Since all our products and services are delivered electronically, traditional shipping does not apply to our business model.
                             </p>
                             <p className="text-text-secondary">
                                 This policy explains how you will receive access to your purchased content and what to expect after completing your transaction.
@@ -142,7 +142,7 @@ export default function ShippingPolicy() {
                         <section className="mb-10">
                             <h2 className="text-2xl font-bold text-heading mb-4">9. Contact Information</h2>
                             <ul className="list-none space-y-2 text-text-secondary">
-                                <li><strong>Email:</strong> support@tarajusiddhant.com</li>
+                                <li><strong>Email:</strong> support@tarazusiddhant.com</li>
                                 <li><strong>Phone:</strong> +91 82092 03234</li>
                                 <li><strong>Address:</strong> Kalwar Road, Jaipur, India</li>
                             </ul>

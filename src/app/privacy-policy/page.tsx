@@ -19,7 +19,7 @@ export default function PrivacyPolicy() {
                         <section className="mb-10">
                             <h2 className="text-2xl font-bold text-heading mb-4">Our Commitment to Privacy</h2>
                             <p className="text-text-secondary leading-relaxed mb-4">
-                                At Taraju Siddhant, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, and safeguard your data.
+                                At Tarazu Siddhant, we are committed to protecting your privacy and ensuring the security of your personal information. This Privacy Policy explains how we collect, use, and safeguard your data.
                             </p>
                         </section>
 
@@ -180,7 +180,7 @@ export default function PrivacyPolicy() {
                                 Our platform may contain links to third-party websites or services. We are not responsible for the privacy practices of these external sites.
                             </p>
                             <p className="text-text-secondary">
-                                We encourage you to review the privacy policies of any third-party services you use. This Privacy Policy applies only to information collected by Taraju Siddhant.
+                                We encourage you to review the privacy policies of any third-party services you use. This Privacy Policy applies only to information collected by Tarazu Siddhant.
                             </p>
                         </section>
 
@@ -203,8 +203,8 @@ export default function PrivacyPolicy() {
                                 If you have questions about this Privacy Policy or how we handle your personal information, please contact us:
                             </p>
                             <ul className="list-none space-y-2">
-                                <li><strong>Privacy Officer:</strong> support@tarajusiddhant.com</li>
-                                <li><strong>General Support:</strong> support@tarajusiddhant.com</li>
+                                <li><strong>Privacy Officer:</strong> support@tarazusiddhant.com</li>
+                                <li><strong>General Support:</strong> support@tarazusiddhant.com</li>
                                 <li><strong>Phone:</strong> +91 82092 03234</li>
                                 <li><strong>Address:</strong> Kalwar Road, Jaipur, India</li>
                             </ul>

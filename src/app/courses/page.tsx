@@ -29,7 +29,7 @@ export default function CoursesPage() {
                                 ← Back to Home
                             </Link>
                             <Link
-                                href="https://academy.tarajusiddhant.com/courses"
+                                href="https://academy.tarazusiddhant.com/courses"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center px-6 py-3 bg-primary text-white font-semibold rounded-full hover:bg-primary-700 transition-all duration-300"

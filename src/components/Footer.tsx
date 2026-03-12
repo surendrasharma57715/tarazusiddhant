@@ -9,7 +9,7 @@ const Footer = () => {
     const quickLinks = [
         { name: 'Home', href: '/' },
         { name: 'About Us', href: '/about' },
-        { name: 'Courses', href: 'https://academy.tarajusiddhant.com/courses' },
+        { name: 'Courses', href: 'https://academy.tarazusiddhant.com/courses' },
         { name: 'Blog', href: '/news' },
         { name: 'Contact', href: '/contact' },
     ]
@@ -30,7 +30,7 @@ const Footer = () => {
 
     const socialLinks = [
         { icon: FaYoutube, href: 'https://youtube.com/@ltp1977?si=93R12yP1b4B1Q0Yy', label: 'YouTube' },
-        { icon: FaInstagram, href: 'https://www.instagram.com/tarajusiddhant.com_?igsh=cTAxNTk0N29pNjJz', label: 'Instagram' },
+        { icon: FaInstagram, href: 'https://www.instagram.com/tarazusiddhant.com_?igsh=cTAxNTk0N29pNjJz', label: 'Instagram' },
         { icon: FaWhatsapp, href: 'https://whatsapp.com/channel/0029VbBWHrYF6smyfv2IAh2L', label: 'WhatsApp Channel' },
         { icon: FaFacebook, href: 'https://www.facebook.com/share/1TSoyHDGyJ/', label: 'Facebook' },
     ]
@@ -109,10 +109,10 @@ const Footer = () => {
                             <li className="flex items-start space-x-3">
                                 <MdEmail className="text-primary mt-1 flex-shrink-0" />
                                 <a
-                                    href="mailto:support@tarajusiddhant.com"
+                                    href="mailto:support@tarazusiddhant.com"
                                     className="text-gray-400 hover:text-primary transition-colors text-sm"
                                 >
-                                    support@tarajusiddhant.com
+                                    support@tarazusiddhant.com
                                 </a>
                             </li>
                             <li className="flex items-start space-x-3">

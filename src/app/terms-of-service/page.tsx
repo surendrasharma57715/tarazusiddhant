@@ -26,7 +26,7 @@ export default function TermsOfService() {
                         <section className="mb-10">
                             <h2 className="text-2xl font-bold text-heading mb-4">1. Acceptance of Terms</h2>
                             <p className="text-text-secondary mb-4">
-                                Welcome to Taraju Siddhant (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). These Terms of Service (&quot;Terms&quot;) govern your use of our website, mobile applications, and services (collectively, the &quot;Platform&quot;). By accessing or using our Platform, you agree to be bound by these Terms.
+                                Welcome to Tarazu Siddhant (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). These Terms of Service (&quot;Terms&quot;) govern your use of our website, mobile applications, and services (collectively, the &quot;Platform&quot;). By accessing or using our Platform, you agree to be bound by these Terms.
                             </p>
                             <p className="text-text-secondary">
                                 If you do not agree to these Terms, please do not use our Platform. We may modify these Terms at any time, and such modifications will be effective immediately upon posting.
@@ -35,7 +35,7 @@ export default function TermsOfService() {
 
                         <section className="mb-10">
                             <h2 className="text-2xl font-bold text-heading mb-4">2. Description of Services</h2>
-                            <p className="text-text-secondary mb-4">Taraju Siddhant provides educational services related to stock market trading and investment, including:</p>
+                            <p className="text-text-secondary mb-4">Tarazu Siddhant provides educational services related to stock market trading and investment, including:</p>
                             <ul className="list-disc pl-6 text-text-secondary space-y-2">
                                 <li>Live trading classes during market hours (9:00 AM - 12:00 PM and 3:00 PM - 5:00 PM IST)</li>
                                 <li>Online courses on trading strategies and market analysis</li>
@@ -94,7 +94,7 @@ export default function TermsOfService() {
                         <section className="mb-10">
                             <h2 className="text-2xl font-bold text-heading mb-4">7. Intellectual Property Rights</h2>
                             <ul className="list-none space-y-4 text-text-secondary">
-                                <li><strong>7.1 Our Content:</strong> All content, including videos, text, graphics, logos, and software, is owned by Taraju Siddhant and protected by copyright laws.</li>
+                                <li><strong>7.1 Our Content:</strong> All content, including videos, text, graphics, logos, and software, is owned by Tarazu Siddhant and protected by copyright laws.</li>
                                 <li><strong>7.2 License:</strong> We grant you a limited, non-exclusive, non-transferable license to access and use our content for personal educational purposes only.</li>
                                 <li><strong>7.3 Restrictions:</strong> You may not modify, distribute, reproduce, or create derivative works from our content.</li>
                             </ul>
@@ -163,7 +163,7 @@ export default function TermsOfService() {
                                 For questions about these Terms of Service, please contact us:
                             </p>
                             <ul className="list-none space-y-2 text-text-secondary">
-                                <li><strong>Email:</strong> support@tarajusiddhant.com</li>
+                                <li><strong>Email:</strong> support@tarazusiddhant.com</li>
                                 <li><strong>Phone:</strong> +91 82092 03234</li>
                                 <li><strong>Address:</strong> Kalwar Road, Jaipur, India</li>
                             </ul>
@@ -174,7 +174,7 @@ export default function TermsOfService() {
                             <p className="text-text-secondary mb-6">
                                 We&apos;re here to help clarify any questions you may have about our Terms of Service. Don&apos;t hesitate to reach out to our support team.
                             </p>
-                            <a href="mailto:support@tarajusiddhant.com" className="inline-flex items-center px-8 py-3 bg-primary text-white font-bold rounded-full hover:bg-primary-700 transition-all shadow-lg">
+                            <a href="mailto:support@tarazusiddhant.com" className="inline-flex items-center px-8 py-3 bg-primary text-white font-bold rounded-full hover:bg-primary-700 transition-all shadow-lg">
                                 Contact Support
                             </a>
                         </div>

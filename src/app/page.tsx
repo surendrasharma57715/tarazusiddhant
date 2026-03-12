@@ -61,7 +61,7 @@ export default function HomePage() {
                         </p>
                         <div className="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
                             <Link
-                                href="https://academy.tarajusiddhant.com"
+                                href="https://academy.tarazusiddhant.com"
                                 target="_blank"
                                 className="px-6 py-4 md:px-10 md:py-5 bg-white text-primary font-bold rounded-full hover:bg-gray-100 transition-all shadow-lg hover:shadow-white/20 transform hover:-translate-y-1 text-sm md:text-base"
                             >

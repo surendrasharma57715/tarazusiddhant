@@ -16,8 +16,10 @@ model Admin {
   role      Role       @default(ADMIN)
   createdAt DateTime   @default(now())
   updatedAt DateTime   @updatedAt
-  blogPosts BlogPost[]
-  media     Media[]
+  resetToken       String?    @unique
+  resetTokenExpiry DateTime?
+  blogPosts        BlogPost[]
+  media            Media[]
 
   @@map("admins")
 }

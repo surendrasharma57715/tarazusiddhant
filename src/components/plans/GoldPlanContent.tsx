@@ -84,7 +84,7 @@ const GoldPlanContent = () => {
                             </p>
                             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                                 <Link
-                                    href="https://academy.tarajusiddhant.com/memberships"
+                                    href="https://academy.tarazusiddhant.com/memberships"
                                     className="px-8 py-4 bg-amber-500 text-white font-bold rounded-2xl hover:bg-amber-600 transition-all duration-300 shadow-xl shadow-amber-500/20 flex items-center gap-2"
                                 >
                                     Join Gold Membership <ArrowRight className="w-5 h-5" />
@@ -180,7 +180,7 @@ const GoldPlanContent = () => {
                                         </div>
 
                                         <Link
-                                            href="https://academy.tarajusiddhant.com/memberships"
+                                            href="https://academy.tarazusiddhant.com/memberships"
                                             className="w-full py-5 bg-white text-dark font-black rounded-2xl flex items-center justify-center gap-3 hover:bg-gray-100 transition-all text-lg shadow-xl"
                                         >
                                             BUY GOLD PLAN NOW <ArrowRight size={22} />

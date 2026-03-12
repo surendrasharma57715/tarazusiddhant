@@ -145,6 +145,14 @@ function LoginForm() {
                             {errors.password && (
                                 <p className="mt-1 text-sm text-red-300">{errors.password.message}</p>
                             )}
+                            <div className="flex justify-end mt-2">
+                                <a
+                                    href="/admin/forgot-password"
+                                    className="text-xs text-gray-400 hover:text-white transition-colors"
+                                >
+                                    Forgot Password?
+                                </a>
+                            </div>
                         </div>
 
                         {/* Submit button */}

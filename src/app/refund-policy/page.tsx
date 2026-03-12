@@ -19,14 +19,14 @@ export default function RefundPolicy() {
                         <div className="bg-red-50 border-l-4 border-red-400 p-6 mb-10 rounded-r-xl">
                             <h3 className="text-red-800 font-bold mb-2">No Refund Policy</h3>
                             <p className="text-red-700 text-sm">
-                                As a general rule, Taraju Siddhant does not offer refunds for purchased memberships, courses, digital products, or any other services. All sales are final.
+                                As a general rule, Tarazu Siddhant does not offer refunds for purchased memberships, courses, digital products, or any other services. All sales are final.
                             </p>
                         </div>
 
                         <section className="mb-10">
                             <h2 className="text-2xl font-bold text-heading mb-4">1. Policy Overview</h2>
                             <p className="text-text-secondary mb-4">
-                                This Refund Policy outlines the terms and conditions regarding refunds for services purchased from Taraju Siddhant. By making a purchase, you acknowledge and agree to this policy.
+                                This Refund Policy outlines the terms and conditions regarding refunds for services purchased from Tarazu Siddhant. By making a purchase, you acknowledge and agree to this policy.
                             </p>
                             <p className="text-text-secondary font-bold">
                                 Important: Please read this policy carefully before making any purchase. Once you complete your transaction, you are bound by these terms.
@@ -136,7 +136,7 @@ export default function RefundPolicy() {
                         <section className="mb-10">
                             <h2 className="text-2xl font-bold text-heading mb-4">10. Contact Information</h2>
                             <ul className="list-none space-y-2 text-text-secondary">
-                                <li><strong>Email:</strong> support@tarajusiddhant.com</li>
+                                <li><strong>Email:</strong> support@tarazusiddhant.com</li>
                                 <li><strong>Phone:</strong> +91 82092 03234</li>
                                 <li><strong>Address:</strong> Kalwar Road, Jaipur, India</li>
                             </ul>

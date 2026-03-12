@@ -23,7 +23,7 @@ const contactInfo = [
     {
         icon: Mail,
         title: 'Email Address',
-        details: ['support@tarajusiddhant.com', 'info@tarazusiddhant.com'],
+        details: ['support@tarazusiddhant.com', 'info@tarazusiddhant.com'],
         color: 'bg-purple-100 text-purple-600'
     },
     {
@@ -37,7 +37,7 @@ const contactInfo = [
 // Social Links
 const socialLinks = [
     { icon: Youtube, href: 'https://youtube.com/@ltp1977?si=93R12yP1b4B1Q0Yy', color: 'hover:text-red-600' },
-    { icon: Instagram, href: 'https://www.instagram.com/tarajusiddhant.com_?igsh=cTAxNTk0N29pNjJz', color: 'hover:text-pink-600' },
+    { icon: Instagram, href: 'https://www.instagram.com/tarazusiddhant.com_?igsh=cTAxNTk0N29pNjJz', color: 'hover:text-pink-600' },
     { icon: FaWhatsapp, href: 'https://whatsapp.com/channel/0029VbBWHrYF6smyfv2IAh2L', color: 'hover:text-green-600' },
     { icon: Facebook, href: 'https://www.facebook.com/share/1TSoyHDGyJ/', color: 'hover:text-blue-600' }
 ]

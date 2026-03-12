@@ -19,7 +19,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
     title: 'Tarazu Siddhant - Best Trading Course in Jaipur | LTP Calculator Online',
     description: 'Master the Option Chain Tarazu Principle with Surendra Kumar Sharma. Join Tarazu Siddhant Academy for the best stock market course and Intraday strategies in Jaipur. Free LTP Calculator tool available.',
-    keywords: 'LTP Calculator, LTP Calculator Online, Free LTP Calculator, LTP Calculator for Intraday, Trading LTP Calculator India, LTP Calculator Tool, Advanced LTP Calculator, Best LTP Calculator India, LTP Calculator Jaipur, Tarazu Siddhant, Tarazu Siddhant Trading Course, Tarazu Siddhant Academy, Tarazu Siddhant Jaipur, Tarazu Siddhant Stock Market Course, Tarazu Siddhant Intraday Strategy, Tarazu Siddhant Classes Jaipur, Tarazu Siddhant Office Jaipur, Tarazu Siddhant Trading Institute, Join Tarazu Siddhant Course, Taraju Siddhant, Taraju Siddhant Trading Course, Taraju Siddhant Academy, option chain analysis, trading education',
+    keywords: 'LTP Calculator, LTP Calculator Online, Free LTP Calculator, LTP Calculator for Intraday, Trading LTP Calculator India, LTP Calculator Tool, Advanced LTP Calculator, Best LTP Calculator India, LTP Calculator Jaipur, Tarazu Siddhant, Tarazu Siddhant Trading Course, Tarazu Siddhant Academy, Tarazu Siddhant Jaipur, Tarazu Siddhant Stock Market Course, Tarazu Siddhant Intraday Strategy, Tarazu Siddhant Classes Jaipur, Tarazu Siddhant Office Jaipur, Tarazu Siddhant Trading Institute, Join Tarazu Siddhant Course, Tarazu Siddhant, Tarazu Siddhant Trading Course, Tarazu Siddhant Academy, option chain analysis, trading education',
     authors: [{ name: 'Surendra Kumar Sharma' }],
     icons: {
         icon: '/favicon.svg',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Tarazu Siddhant - Best Trading Education Mentor',
         description: 'Learn stock market trading with Tarazu Siddhant Academy. Master Option Chain analysis and use our LTP Calculator Tool.',
-        url: 'https://tarajusiddhant.com',
+        url: 'https://tarazusiddhant.com',
         siteName: 'Tarazu Siddhant Academy',
         locale: 'en_IN',
         type: 'website',

@@ -15,7 +15,7 @@ const PricingSection = () => {
             features: [
                 'Basic Live Classes Access',
                 'Fundamental Courses',
-                'Introduction to Taraju Principle',
+                'Introduction to Tarazu Principle',
                 'Community Support',
                 'Basic Trading Strategies'
             ],
@@ -32,7 +32,7 @@ const PricingSection = () => {
             features: [
                 'All Live Classes Access',
                 'All Courses Access',
-                'Advanced Taraju Principle',
+                'Advanced Tarazu Principle',
                 'Intraday Special Strategies',
                 'Option Chain Analysis'
             ],
@@ -133,7 +133,7 @@ const PricingSection = () => {
                                     plan.name === 'Silver Membership' ? '/membership/silver' :
                                         plan.name === 'Gold Membership' ? '/membership/gold' :
                                             plan.name === 'Diamond Membership' ? '/membership/diamond' :
-                                                'https://academy.tarajusiddhant.com/memberships'
+                                                'https://academy.tarazusiddhant.com/memberships'
                                 }
                                 className={`w-full py-4 rounded-2xl font-bold flex items-center justify-center gap-2 transition-all duration-300 ${plan.popular
                                     ? 'bg-primary text-white hover:bg-primary-700 shadow-lg shadow-primary/20'
