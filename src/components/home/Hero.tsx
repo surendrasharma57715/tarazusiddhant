@@ -106,7 +106,7 @@ const Hero = () => {
                             <div className="absolute inset-4 sm:inset-6 rounded-full overflow-hidden border-[6px] sm:border-[10px] border-white shadow-2xl z-10 bg-gray-100 group">
                                 <Image
                                     src="/images/surendra-sharma.jpg"
-                                    alt="Surendra Kumar Sharma - Tarazu Siddhant"
+                                    alt="Surendra Kumar Sharma-Tarazu Siddhant"
                                     fill
                                     priority
                                     className="object-cover object-top transform group-hover:scale-110 transition-transform duration-700"
