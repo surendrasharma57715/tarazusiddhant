@@ -38,21 +38,38 @@ const Header = () => {
 
     return (
         <header className="fixed top-0 left-0 right-0 z-50">
-            {/* Top Static Bar - Formulas */}
-            <div className="bg-gradient-to-r from-blue-700 via-purple-700 to-purple-600 text-white py-1.5 px-2 border-b border-white/5">
+            {/* Top Static Bar - Formulas (Converted to Marquee for mobile/desktop spacing) */}
+            <div className="bg-gradient-to-r from-blue-700 via-purple-700 to-purple-600 text-white py-1.5 px-2 border-b border-white/5 overflow-hidden">
                 <div className="container mx-auto">
-                    <div className="flex justify-center items-center gap-2 sm:gap-6 text-[7px] min-[400px]:text-[8px] sm:text-xs md:text-sm font-medium tracking-tighter sm:tracking-tight text-center uppercase whitespace-nowrap overflow-hidden">
-                        <span className="flex items-center gap-1 flex-shrink-0">
-                            ONE DAY FORMULAS
-                        </span>
-                        <span className="opacity-40 text-xs font-light flex-shrink-0">|</span>
-                        <span className="flex items-center gap-1 flex-shrink-0">
-                            OPTION CHAIN PRACTICAL APPROACH
-                        </span>
-                        <span className="opacity-40 text-xs font-light flex-shrink-0">|</span>
-                        <span className="flex items-center gap-1 flex-shrink-0">
-                            TARAZU SIDDHANT MASTER APPROACH
-                        </span>
+                    <div className="flex animate-marquee hover:[animation-play-state:paused] whitespace-nowrap">
+                        {[1, 2].map((group) => (
+                            <div key={`group-${group}`} className="flex items-center">
+                                <span className="flex items-center gap-1 flex-shrink-0 mx-4 text-[9px] sm:text-xs md:text-sm font-bold uppercase">
+                                    ONE DAY FORMULAS
+                                </span>
+                                <span className="opacity-40 text-xs font-light flex-shrink-0">|</span>
+                                <span className="flex items-center gap-1 flex-shrink-0 mx-4 text-[9px] sm:text-xs md:text-sm font-bold uppercase">
+                                    OPTION CHAIN PRACTICAL APPROACH
+                                </span>
+                                <span className="opacity-40 text-xs font-light flex-shrink-0">|</span>
+                                <span className="flex items-center gap-1 flex-shrink-0 mx-4 text-[9px] sm:text-xs md:text-sm font-bold uppercase">
+                                    TARAZU SIDDHANT MASTER APPROACH
+                                </span>
+                                <span className="opacity-40 text-xs font-light flex-shrink-0">|</span>
+                                <span className="flex items-center gap-1 flex-shrink-0 mx-4 text-[9px] sm:text-xs md:text-sm font-bold uppercase">
+                                    TRIPLE X CONCEPT
+                                </span>
+                                <span className="opacity-40 text-xs font-light flex-shrink-0">|</span>
+                                <span className="flex items-center gap-1 flex-shrink-0 mx-4 text-[9px] sm:text-xs md:text-sm font-bold uppercase">
+                                    INTRADAY TRADING MIND PSYCHOLOGY
+                                </span>
+                                <span className="opacity-40 text-xs font-light flex-shrink-0">|</span>
+                                <span className="flex items-center gap-1 flex-shrink-0 mx-4 text-[9px] sm:text-xs md:text-sm font-bold uppercase">
+                                    INTRADAY TRADING RULES AND REGULATION
+                                </span>
+                                <span className="opacity-40 text-xs font-light flex-shrink-0">|</span>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
